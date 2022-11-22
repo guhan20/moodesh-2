@@ -1,5 +1,7 @@
 import imp
 import os
+from datetime import datetime
+from time import time
 import logging
 import pyrogram
 import random
@@ -17,6 +19,28 @@ import re
 import json
 import base64
 logger = logging.getLogger(__name__)
+
+START_TIME = datetime.utcnow()
+START_TIME_ISO = START_TIME.replace(microsecond=0).isoformat()
+TIME_DURATION_UNITS = (
+    ("Week", 60 * 60 * 24 * 7),
+    ("Day", 60 ** 2 * 24),
+    ("hour", 60 ** 2),
+    ("Min", 60),
+    ("Sec", 1),
+)
+
+
+async def _human_time_duration(seconds):
+    if seconds == 0:
+        return "inf"
+    parts = []
+    for unit, div in TIME_DURATION_UNITS:
+        amount, seconds = divmod(int(seconds), div)
+        if amount > 0:
+            parts.append("{} {}{}".format(amount, unit, "" if amount == 1 else ""))
+    return " | ".join(parts)
+
 
 BATCH_FILES = {}
 
