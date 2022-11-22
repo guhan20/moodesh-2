@@ -112,7 +112,7 @@ Sᴏʀʀʏ ɪ ᴏɴʟʏ ᴡᴏʀᴋ ᴏɴ <a href=https://t.me/cinimaadholokaam>
         btn = [
             [
                 InlineKeyboardButton("ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=invite_link.invite_link),
-                InlineKeyboardButton("ᴍᴇ ᴊᴏɪɴᴇᴅ", callback_data=f"f"checksub#{message.command[1]}")
+                InlineKeyboardButton("ᴍᴇ ᴊᴏɪɴᴇᴅ", callback_data=f"checksub#{message.command[1]}")
             ]
         ]
 
