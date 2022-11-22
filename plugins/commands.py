@@ -20,76 +20,63 @@ logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
 
-@Client.on_message(filters.command("start") & filters.incoming & ~filters.edited)
-async def start(client, message: pyrogram.types.Message):
+Stick = ["CAACAgUAAxkBAAL7umI6cTUVkz76oY-lCM-ER9ckmocWAALMBQACA4PQVfZWZpzf6_lTIwQ", "CAACAgUAAxkBAAL7tmI6cTOpTVeujSnIGMmyozNZsaqvAAKSBgACKVTRVTmzrV5a1VpKIwQ", "CAACAgUAAxkBAAL7smI6cTEmz3mqVs8wFZkPFDGM4dqGAAK9AwACDjvYVZedN-jbvA19IwQ", "CAACAgUAAxkBAAL7rmI6cS8LC9r7JunLgdbJDM4y1fSeAAIuBgAC8z3YVZoETpL_Ie_aIwQ", "CAACAgUAAxkBAAL7qmI6cSxYaTN-GWK5ONN5E2M4gnQiAAIqBQACgnfRVZ3AgxqOV5G8IwQ",]
+
+Kumatti = ["CAACAgEAAxkBAAFcDUBhoZ7gPWvdhHSRD-TofdEG7tf95wAC2wEAAnuK0EWF9EMPRHczpCIE", "CAACAgEAAxkBAAFcDSZhoZ0XwWX2gN0gayGXtTaH9rtJagAC5QEAAmiv0EUaNsNeiq6UdiIE"]
+
+
+@Client.on_message(filters.command("start") & (filters.private))
+async def start(client, message):
+    m = datetime.now()
+
+    time = m.hour
+
+    if time < 6:
+        get="Gᴏᴏᴅ Mᴏʀɴɪɴɢ" 
+    elif time < 12:
+        get="Gᴏᴏᴅ Aғᴛᴇʀɴᴏᴏɴ"
+    elif time < 17:
+        get="Gᴏᴏᴅ Eᴠᴀɴɪɴɢ"
+    elif time < 20: 
+        get="Gᴏᴏᴅ Nɪɢʜᴛ"
+    else:
+        get="Gᴏᴏᴅ Nɪɢʜᴛ"
 
     if message.chat.type in ['group', 'supergroup']:
-        buttons = [[
-        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true') ] ,
-      [
-        InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about_menu'),
-        InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close')
-    ]]
-       
-        reply_markup = InlineKeyboardMarkup(buttons)
-        if not START_IMAGE_URL:
-            await message.reply(
-                script.START_TXT.format(
-                    (message.from_user.mention if 
-                    message.from_user else 
-                    message.chat.title), 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                reply_markup=reply_markup
-            )
-        else:
-            await message.reply_photo(
-                photo=START_IMAGE_URL,
-                caption=script.START_TXT.format(
-                    (message.from_user.mention if 
-                    message.from_user else 
-                    message.chat.title), 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                reply_markup=reply_markup
-            )
-        await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
-        
+        fuc = await message.reply_sticker(sticker=random.choice(Kumatti))
+        await asyncio.sleep(2)
+        await message.delete()
+        await fuc.delete()# 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         if not await db.get_chat(message.chat.id):
-            link = await bot.create_chat_invite_link(chat)
             total=await client.get_chat_members_count(message.chat.id)
             await client.send_message(LOG_CHANNEL, script.LOG_TEXT_G.format(message.chat.title, message.chat.id, total, "Unknown"))       
             await db.add_chat(message.chat.id, message.chat.title)
         return 
-    
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id, message.from_user.first_name)
-        await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
-    
+        await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention, message.from_user.mention))
     if len(message.command) != 2:
-
         buttons = [[
-        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true') ] ,
-      [
-        InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about_menu'),
-        InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close')
-    ]]
-
+            InlineKeyboardButton('ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs', callback_data='start'),
+            #InlineKeyboardButton('ɢʀᴏᴜᴘ', callback_data='group')
+            #],[
+            #InlineKeyboardButton('ꜱᴏᴜʀᴄᴇ', callback_data='owner'),
+            #InlineKeyboardButton('ᴄʟᴏꜱᴇ', callback_data='group')
+            #],[
+            #InlineKeyboardButton('ᴊᴏɪɴ ᴏᴜʀ sᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ', url='https://t.me/Mallubros')
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-
+        await message.delete(True)
         await message.reply_photo(
-            photo=START_IMAGE_URL if START_IMAGE_URL else random.choice(PICS),
-            caption=script.START_TXT.format(
-                (message.from_user.mention if 
-                message.from_user else 
-                message.chat.title), 
-                temp.U_NAME, 
-                temp.B_NAME,
-            ),
-            reply_markup=reply_markup
+            photo=random.choice(PICS),
+            caption=f"""<b>{get} {message.from_user.mention}
+    
+Sᴏʀʀʏ ɪ ᴏɴʟʏ ᴡᴏʀᴋ ᴏɴ <a href=https://t.me/cinimaadholokaam>CɪɴɪᴍᴀAᴅʜᴏʟᴏᴋᴀᴍ</a> Gʀᴏᴜᴘ. Nᴏ ᴏᴛʜᴇʀ ᴄᴏᴍᴍᴀɴᴅ ᴡɪʟʟ ᴡᴏʀᴋ ᴏɴ ᴛʜɪs ʙᴏᴛ ᴇxᴄᴇᴘᴛ <u>ᴘɪɴɢ</u>. ᴅᴏɴ’ᴛ ᴡᴀsᴛᴇ ʏᴏᴜʀ ᴛɪᴍᴇ</b>""",
+            reply_to_message_id=message.message_id,
+            reply_markup=reply_markup,
+            parse_mode='html'
         )
+        return
         return
 
     if AUTH_CHANNEL and not await is_subscribed(client, message):
