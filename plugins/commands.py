@@ -109,7 +109,7 @@ Sᴏʀʀʏ ɪ ᴏɴʟʏ ᴡᴏʀᴋ ᴏɴ <a href=https://t.me/cinimaadholokaam>
         except ChatAdminRequired:
             logger.error("Make sure Bot is admin in Forcesub channel")
             return
-         btn = [
+        btn = [
             [
                 InlineKeyboardButton("ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=invite_link.invite_link),
                 InlineKeyboardButton("ᴍᴇ ᴊᴏɪɴᴇᴅ", callback_data=f"{pre}#{file_id}")
