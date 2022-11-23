@@ -89,9 +89,9 @@ async def next_page(bot, query):
 
     btn.insert(0, 
         [ 
-            InlineKeyboardButton(f'ᴍᴏᴠɪᴇs', 'dupe'),
-            InlineKeyboardButton(f'sᴇʀɪᴇs', 'dupe'),
-            InlineKeyboardButton(f'ᴛɪᴘs', 'tips')
+            InlineKeyboardButton(f'ᴍᴏᴠɪᴇs', 'movie'),
+            InlineKeyboardButton(f'sᴇʀɪᴇs', 'series'),
+            InlineKeyboardButton(f'ɪɴғᴏ', 'info')
         ]
     )
 
@@ -1125,9 +1125,9 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
 
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'ᴍᴏᴠɪᴇs', 'dupe'),
-            InlineKeyboardButton(f'sᴇʀɪᴇs', 'dupe'),
-            InlineKeyboardButton(f'ᴛɪᴘs', 'tips')
+            InlineKeyboardButton(f'ᴍᴏᴠɪᴇs', 'movie'),
+            InlineKeyboardButton(f'sᴇʀɪᴇs', 'series'),
+            InlineKeyboardButton(f'ᴛɪᴘs', 'info')
         ]
     )
 
