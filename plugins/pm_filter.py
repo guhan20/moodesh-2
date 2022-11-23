@@ -1069,8 +1069,8 @@ Dark or Dark S01E01
 🚯 ᴅᴏɴᴛ ᴜsᴇ ➠ ':(!,./)
 
 © ᴄɪɴɪᴍᴀᴀᴅʜᴏʟᴏᴋᴀᴍ""", show_alert=True)
-    try: await query.answer('Your Results are there in Filter Button') 
-    except: pass
+#    try: await query.answer('Your Results are there in Filter Button') 
+ #   except: pass
 
 
 async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
