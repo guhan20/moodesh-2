@@ -573,13 +573,13 @@ If you do not see the requested movie / series file, look at the next page
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='Dback')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        file_id = 'https://telegra.ph/file/21e6b290f8ee4bedd5ebc.jpg'
-        mid =  InputMediaPhoto(file_id, caption=script.OWN_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME))
+        file_id = 'https://telegra.ph/file/571de8942f4ac7730cbd6.jpg'
+        mid =  InputMediaPhoto(file_id, caption=script.OWN_TEXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME))
         await query.edit_message_media(
             media = mid,
             #caption=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-           # parse_mode=enums.ParseMode.HTML
+            reply_markup=reply_markup
+            #parse_mode='html'
         )
     elif query.data == "Dback":
         buttons = [[
