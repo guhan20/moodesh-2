@@ -1037,7 +1037,7 @@ If you do not see the requested movie / series file, look at the next page
 
 🗽 ʙʏ  ◉‿◉  ɢ ⁷⁷ ɢᴢ""", show_alert=True)
         
-   elif query.data == "info": 
+    elif query.data == "info": 
         await query.answer("""⚠ Information ⚠
         
 After 30 minutes this message will be automatically deleted
