@@ -99,7 +99,6 @@ async def start(client, message):
 Sᴏʀʀʏ ɪ ᴏɴʟʏ ᴡᴏʀᴋ ᴏɴ <a href=https://t.me/cinimaadholokaam>CɪɴɪᴍᴀAᴅʜᴏʟᴏᴋᴀᴍ</a> Gʀᴏᴜᴘ. Nᴏ ᴏᴛʜᴇʀ ᴄᴏᴍᴍᴀɴᴅ ᴡɪʟʟ ᴡᴏʀᴋ ᴏɴ ᴛʜɪs ʙᴏᴛ ᴇxᴄᴇᴘᴛ <u>ᴘɪɴɢ</u>. ᴅᴏɴ’ᴛ ᴡᴀsᴛᴇ ʏᴏᴜʀ ᴛɪᴍᴇ</b>""",
             reply_to_message_id=message.from_user.id,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
             #parse_mode='html'
         )
         return
