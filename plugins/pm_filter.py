@@ -564,8 +564,8 @@ If you do not see the requested movie / series file, look at the next page
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            reply_markup=reply_markup
+          #  parse_mode=enums.ParseMode.HTML
         )           
     elif query.data == "owner":
         buttons = [[
@@ -578,8 +578,8 @@ If you do not see the requested movie / series file, look at the next page
         await query.edit_message_media(
             media = mid,
             #caption=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            reply_markup=reply_markup
+            #parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "Dback":
         buttons = [[
@@ -600,8 +600,8 @@ If you do not see the requested movie / series file, look at the next page
             media = mid,
             chat_id=query.from_user.id,
             #caption=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            reply_markup=reply_markup
+           # parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "ccbb":
         buttons = [[
@@ -610,8 +610,8 @@ If you do not see the requested movie / series file, look at the next page
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            reply_markup=reply_markup
+          #  parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "weather":
         buttons = [[
