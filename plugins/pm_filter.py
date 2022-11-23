@@ -2,7 +2,9 @@
 import asyncio
 import re
 import ast
-
+from datetime import datetime
+import pytz
+import random
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
 import pyrogram
@@ -48,7 +50,7 @@ async def next_page(bot, query):
         offset = 0
     search = BUTTONS.get(key)
     if not search:
-        await query.answer("You are using one of my old messages, please send the request again.", show_alert=True)
+        await query.answer(f"മോനെ {query.from_user.first_name} ഇത്‌ നിനക്കുള്ളതല്ല 🤭\n\n {query.message.reply_to_message.from_user.first_name} ന്റെ റിക്യുസ്റ്റ് ആണ് ഇത് 🙂\n\nRequest your own 🥰\n\n© Cinimaadholokam", show_alert=True)
         return
 
     files, n_offset, total = await get_search_results(search, offset=offset, filter=True)
@@ -86,11 +88,6 @@ async def next_page(bot, query):
         ]
 
     btn.insert(0, 
-        [
-            InlineKeyboardButton(f'♨️ {search} ♨️ ', 'dupe')
-        ]
-    )
-    btn.insert(1,
         [ 
             InlineKeyboardButton(f'ᴍᴏᴠɪᴇs', 'dupe'),
             InlineKeyboardButton(f'sᴇʀɪᴇs', 'dupe'),
@@ -105,21 +102,22 @@ async def next_page(bot, query):
     else:
         off_set = offset - 10
     if n_offset == 0:
-        btn.append(
-            [InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
-             InlineKeyboardButton(f"📃 Pages {round(int(offset) / 10) + 1} / {round(total / 10)}",
-                                  callback_data="pages")]
-        )
+        btn.append([
+           InlineKeyboardButton("ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"), 
+           InlineKeyboardButton(f"{round(int(offset)/10)+1} - {round(total/10)}", callback_data="pages"),
+           InlineKeyboardButton("ᴅᴇʟᴇᴛᴇ", callback_data=f"close_data"),
+        ])
     elif off_set is None:
-        btn.append(
-            [InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
-             InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")])
+        btn.append([
+           InlineKeyboardButton("ᴘᴀɢᴇꜱ", callback_data=f"pages"),
+           InlineKeyboardButton(f"{round(int(offset)/10)+1} - {round(total/10)}", callback_data="pages"), 
+           InlineKeyboardButton("ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
-                InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
-                InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
-                InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")
+                InlineKeyboardButton("ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
+                InlineKeyboardButton(f"{round(int(offset)/10)+1} - {round(total/10)}", callback_data="pages"),
+                InlineKeyboardButton("ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
     try:
@@ -159,6 +157,63 @@ async def advantage_spoll_choker(bot, query):
 async def cb_handler(client: Client, query: CallbackQuery):
     if query.data == "close_data":
         await query.message.delete()
+        await query.message.reply_to_message.delete()
+         
+    
+    if query.data == "notalert_ml":
+        await query.answer("താങ്കൾ ഉദ്ദേശിച്ച മൂവി / സീരീസ് ഇതല്ല എങ്കിൽ  ഗൂഗിളിൽ പോയി കറക്റ്റ് സ്പെല്ലിങ് കണ്ടുപിടിച്ചു അതുപോലെ എവിടെ കൊടുക്ക്", show_alert=True)
+    
+    elif query.data == "rpclose":
+        await query.message.delete()
+      
+    elif query.data == "movie":
+
+        await query.answer("""⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇsᴛ ғᴏʀᴍᴀᴛ 
+⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+ɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀsᴛ ᴛʜɪs ɢʀᴏᴜᴘ 
+
+ᴇxᴀᴍᴘʟᴇ : ᴀᴡᴀᴋᴇ  ᴏʀ  ᴀᴡᴀᴋᴇ 2021
+
+🚯 ᴅᴏɴᴛ ᴜsᴇ ➠ ':(!,./)
+
+© ᴄɪɴɪᴍᴀᴀᴅʜᴏʟᴏᴋᴀᴍ""", show_alert=True)
+         
+    elif query.data == "series": 
+        await query.answer("""⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+sᴇʀɪᴇs ʀᴇǫᴜᴇsᴛ ғᴏʀᴍᴀᴛ 
+⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+ɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ sᴇʀɪᴇs ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀsᴛ ᴛʜɪs ɢʀᴏᴜᴘ 
+Dark or Dark S01E01
+
+🚯 ᴅᴏɴᴛ ᴜsᴇ ➠ ':(!,./)
+
+© ᴄɪɴɪᴍᴀᴀᴅʜᴏʟᴏᴋᴀᴍ""", show_alert=True)
+         
+    elif query.data == "info": 
+        await query.answer("""⚠ Information ⚠
+        
+After 30 minutes this message will be automatically deleted
+
+If you do not see the requested movie / series file, look at the next page
+
+© ᴄɪɴɪᴍᴀᴀᴅʜᴏʟᴏᴋᴀᴍ""", show_alert=True)
+ 
+    elif query.data == "notalert_en": 
+        await query.answer("If this is not the movie / series you are looking for then just go to Google and find the correct spelling and give it a try.", show_alert=True)
+         
+    elif query.data == "whyjoin": 
+        await query.answer("അഥവാ ഗ്രൂപ്പ് കോപ്പിറൈറ് കിട്ടി പോയാൽ .. പുതിയ ഗ്രൂപ്പ് തുടങ്ങുമ്പോൾ ഇപ്പോൾ ജോയിൻ ആകുന്ന Channel വഴി ആയിരിക്കും അറിയിക്കുന്നത് 🤥", show_alert=True)
+         
+    elif query.data == "pm": 
+        await query.answer("""📵 𝘾𝙤𝙣𝙩𝙖𝙘𝙩 𝙉𝙤𝙩 𝘼𝙡𝙡𝙤𝙬𝙚𝙙  
+        
+- Section B206 - Spam + Ban ⚠️
+- Section Y8R6 - Spam + Report 🉐
+
+🗽 ʙʏ  ◉‿◉  ɢ ⁷⁷ ɢᴢ""", show_alert=True)
+        
     elif query.data == "delallconfirm":
         userid = query.from_user.id
         chat_type = query.message.chat.type
