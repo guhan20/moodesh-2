@@ -294,7 +294,9 @@ Fɪʀsᴛ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ【 <a href="https://t.me/CinimaAdholokaam
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
+        reply_to_message_id=message.from_user.id,
         protect_content=True if pre == 'filep' else False,
+        reply_markup=InlineKeyboardMarkup(buttons)
         )
                     
 
