@@ -90,6 +90,7 @@ async def start(client, message):
             #InlineKeyboardButton('ᴊᴏɪɴ ᴏᴜʀ sᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ', url='https://t.me/Mallubros')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        chat_id=message.from_user.id
         await message.delete(True)
         await message.reply_photo(
             photo=random.choice(PICS),
