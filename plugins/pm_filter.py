@@ -824,7 +824,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
 ┣ ⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : [𐌑ꤌ꤯᥉꤯ꤕ ²·⁰](https://t.me/Ca_maisiebot) 
 ┗ 🍁 ᴄʜᴀɴɴᴇʟ : @Calinkzz
 
-<i>★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ  <a href="https://t.me/Cinimadholokam">ᴄɪɴɪᴍᴀᴀᴅʜᴏʟᴏᴋᴀᴍ</a></i></b>""", reply_markup=InlineKeyboardMarkup(btn))
+<i>★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ  <a href="https://t.me/Cinimadholokam">ᴄɪɴɪᴍᴀᴀᴅʜᴏʟᴏᴋᴀᴍ</a></i></b>""", parse_mode=enums.ParseMode.HTML, reply_markup=InlineKeyboardMarkup(btn))
     else:
         fmsg = await message.reply_photo(photo="https://telegra.ph/file/e4fa9ab229d31a779c010.jpg", caption=f"""<b>🎪 ᴛɪᴛɪʟᴇ <i>{search}</i>
                 
@@ -832,7 +832,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
 ┣ ⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : <a href="https://t.me/Ca_maisiebot">𐌑ꤌ꤯᥉꤯ꤕ ²·⁰</a>
 ┗ 🍁 ᴄʜᴀɴɴᴇʟ : @Calinkzz
 
-<i>★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ  <a href="https://t.me/Cinimadholokam">ᴄɪɴɪᴍᴀᴀᴅʜᴏʟᴏᴋᴀᴍ</a></i></b>""", reply_markup=InlineKeyboardMarkup(btn))
+<i>★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ  <a href="https://t.me/Cinimadholokam">ᴄɪɴɪᴍᴀᴀᴅʜᴏʟᴏᴋᴀᴍ</a></i></b>""", parse_mode=enums.ParseMode.HTML, reply_markup=InlineKeyboardMarkup(btn))
     
     #await asyncio.sleep(DELETE_TIME)
     #await fmsg.delete()
