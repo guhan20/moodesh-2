@@ -97,7 +97,7 @@ async def start(client, message):
             caption=f"""<b>{get} {message.from_user.mention}
     
 Sᴏʀʀʏ ɪ ᴏɴʟʏ ᴡᴏʀᴋ ᴏɴ <a href=https://t.me/cinimaadholokaam>CɪɴɪᴍᴀAᴅʜᴏʟᴏᴋᴀᴍ</a> Gʀᴏᴜᴘ. Nᴏ ᴏᴛʜᴇʀ ᴄᴏᴍᴍᴀɴᴅ ᴡɪʟʟ ᴡᴏʀᴋ ᴏɴ ᴛʜɪs ʙᴏᴛ ᴇxᴄᴇᴘᴛ <u>ᴘɪɴɢ</u>. ᴅᴏɴ’ᴛ ᴡᴀsᴛᴇ ʏᴏᴜʀ ᴛɪᴍᴇ</b>""",
-            reply_to_message_id=message.message_id,
+            reply_to_message_id=message.from_user.id,
             reply_markup=reply_markup,
             parse_mode='html'
         )
