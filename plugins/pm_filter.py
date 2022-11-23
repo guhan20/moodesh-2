@@ -91,7 +91,7 @@ async def next_page(bot, query):
         [ 
             InlineKeyboardButton(f'ᴍᴏᴠɪᴇs', 'movie'),
             InlineKeyboardButton(f'sᴇʀɪᴇs', 'series'),
-            InlineKeyboardButton(f'ɪɴғᴏ', 'info')
+            InlineKeyboardButton(f'ɪɴғᴏ', 'test')
         ]
     )
 
@@ -191,7 +191,7 @@ Dark or Dark S01E01
 
 © ᴄɪɴɪᴍᴀᴀᴅʜᴏʟᴏᴋᴀᴍ""", show_alert=True)
          
-    elif query.data == "info": 
+    elif query.data == "test": 
         await query.answer("""⚠ Information ⚠
         
 After 30 minutes this message will be automatically deleted
@@ -1077,7 +1077,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
         [
             InlineKeyboardButton(f'ᴍᴏᴠɪᴇs', 'movie'),
             InlineKeyboardButton(f'sᴇʀɪᴇs', 'series'),
-            InlineKeyboardButton(f'ᴛɪᴘs', 'info')
+            InlineKeyboardButton(f'ɪɴғᴏ', 'test')
         ]
     )
 
