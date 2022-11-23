@@ -565,7 +565,7 @@ If you do not see the requested movie / series file, look at the next page
         await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )           
     elif query.data == "owner":
         buttons = [[
@@ -578,8 +578,8 @@ If you do not see the requested movie / series file, look at the next page
         await query.edit_message_media(
             media = mid,
             #caption=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup
-            #parse_mode='html'
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "Dback":
         buttons = [[
@@ -600,8 +600,8 @@ If you do not see the requested movie / series file, look at the next page
             media = mid,
             chat_id=query.from_user.id,
             #caption=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup
-            #parse_mode='html'
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "ccbb":
         buttons = [[
@@ -611,7 +611,7 @@ If you do not see the requested movie / series file, look at the next page
         await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "weather":
         buttons = [[
@@ -621,7 +621,7 @@ If you do not see the requested movie / series file, look at the next page
         await query.message.edit_text(
             text=script.WEATHER_TXT,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "cntry":
         buttons = [[
@@ -631,7 +631,7 @@ If you do not see the requested movie / series file, look at the next page
         await query.message.edit_text(
             text=script.CNTRY_TXT,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "source":
         buttons = [[
@@ -642,7 +642,7 @@ If you do not see the requested movie / series file, look at the next page
         await query.message.reply(
                 text=script.SOURCE_TXT,
                 reply_markup=reply_markup,
-                parse_mode='html'
+                parse_mode=enums.ParseMode.HTML
             )
     elif query.data == "gtrans":
         buttons = [[
@@ -652,7 +652,7 @@ If you do not see the requested movie / series file, look at the next page
         await query.message.edit_text(
             text=script.GTRANS_TXT,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "urlshrt":
         buttons = [[
@@ -662,7 +662,7 @@ If you do not see the requested movie / series file, look at the next page
         await query.message.edit_text(
             text=script.SHORT_TXT,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "trnt":
         buttons = [[
@@ -672,7 +672,7 @@ If you do not see the requested movie / series file, look at the next page
         await query.message.edit_text(
             text=script.TRNT_TXT,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "tts":
         buttons = [[
@@ -682,7 +682,7 @@ If you do not see the requested movie / series file, look at the next page
         await query.message.edit_text(
             text=script.TTS_TXT,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "mute":
         buttons = [[
@@ -692,7 +692,7 @@ If you do not see the requested movie / series file, look at the next page
         await query.message.edit_text(
             text=script.MUTE_TXT,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "tts":
         buttons = [[
