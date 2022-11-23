@@ -502,10 +502,10 @@ If you do not see the requested movie / series file, look at the next page
                 )
             )
             await query.answer('Check Out The Chat',)
-            await asyncio.sleep(300)
-            await msg1.delete()
-            await msg.delete()
-            del msg1, msg
+          #  await asyncio.sleep(300)
+           # await msg1.delete()
+          #  await msg.delete()
+          #  del msg1, msg
         except Exception as e:
             logger.exception(e, exc_info=True)
             await query.answer(f"Encountering Issues", True)
@@ -1124,8 +1124,8 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     else:
         fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     
-    await asyncio.sleep(DELETE_TIME)
-    await fmsg.delete()
+    #await asyncio.sleep(DELETE_TIME)
+    #await fmsg.delete()
 
     if spoll:
         await msg.message.delete()
