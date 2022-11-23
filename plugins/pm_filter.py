@@ -1131,7 +1131,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
         fmsg = await message.reply_photo(photo="https://telegra.ph/file/e4fa9ab229d31a779c010.jpg", caption=f"""<b>🎪 ᴛɪᴛɪʟᴇ <i>{search}</i>
                 
 ┏ 🤴 ᴀsᴋᴇᴅ ʙʏ : <a href="tg://need_update_for_some_feature">{message.from_user.first_name}</a>
-┣ ⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : [𐌑ꤌ꤯᥉꤯ꤕ ²·⁰](https://t.me/Ca_maisiebot) 
+┣ ⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : <a href="https://t.me/Ca_maisiebot">𐌑ꤌ꤯᥉꤯ꤕ ²·⁰</a>
 ┗ 🍁 ᴄʜᴀɴɴᴇʟ : @Calinkzz
 
 <i>★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ  <a href="https://t.me/Cinimadholokam">ᴄɪɴɪᴍᴀᴀᴅʜᴏʟᴏᴋᴀᴍ</a></i></b>""", reply_markup=InlineKeyboardMarkup(btn))
