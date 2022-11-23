@@ -578,8 +578,8 @@ If you do not see the requested movie / series file, look at the next page
         await query.edit_message_media(
             media = mid,
             #caption=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup
-            #parse_mode='html'
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "Dback":
         buttons = [[
