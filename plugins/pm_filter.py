@@ -596,7 +596,7 @@ If you do not see the requested movie / series file, look at the next page
         reply_markup = InlineKeyboardMarkup(buttons)
         file_id = random.choice(PICS)
         mid =  InputMediaPhoto(file_id, caption=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME))
-        await query.edit_message_media(
+        await query.editMessageMedia(
             media = mid,
             chat_id=query.from_user.id,
             #caption=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
