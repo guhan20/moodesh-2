@@ -579,7 +579,7 @@ If you do not see the requested movie / series file, look at the next page
             media = mid,
             #caption=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup
-           # parse_mode=enums.ParseMode.HTML
+            #parse_mode='html'
         )
     elif query.data == "Dback":
         buttons = [[
