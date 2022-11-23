@@ -601,19 +601,15 @@ If you do not see the requested movie / series file, look at the next page
             reply_markup=reply_markup
             #parse_mode='html'
         )
-    elif query.data == "about_menu":
+    elif query.data == "ccbb":
         buttons = [[
-        InlineKeyboardButton('ᴅᴋ ʙᴏᴛx', url='https://t.me/dk_botx'),
-        InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', url='https://t.me/dkbotxchats'),
-        InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='start')
+            InlineKeyboardButton('ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏᴜɴs', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.delete()
-        await query.message.reply(
-            text=script.ABOUT_TXT.format(temp.B_NAME),
+        await query.message.edit_text(
+            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
-            parse_mode='html',
-            disable_web_page_preview=True
+            parse_mode='html'
         )
     elif query.data == "weather":
         buttons = [[
