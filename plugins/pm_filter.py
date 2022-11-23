@@ -12,7 +12,7 @@ from database.connections_mdb import active_connection, all_connections, delete_
     make_inactive
 from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, DELETE_TIME, P_TTI_SHOW_OFF, IMDB, REDIRECT_TO, \
     SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE, START_IMAGE_URL, UNAUTHORIZED_CALLBACK_TEXT, redirected_env
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto,InputMediaDocument,InputMediaVideo,InputMediaAnimation,InputMediaAudio
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
 from utils import get_size, is_subscribed, get_poster, search_gagala, temp, get_settings, save_group_settings
@@ -552,72 +552,54 @@ If you do not see the requested movie / series file, look at the next page
         await query.answer()
     elif query.data == "start":
         buttons = [[
-        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true') ] ,
-     [
-        InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about_menu'),
-        InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close')
-    ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.delete()
-        if not START_IMAGE_URL:
-            await query.message.reply(
-                script.START_TXT.format(
-                    query.from_user.mention, 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                reply_markup=reply_markup
-            )
-        else:
-            await query.message.reply_photo(
-                photo=START_IMAGE_URL,
-                caption=script.START_TXT.format(
-                    query.from_user.mention , 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                reply_markup=reply_markup
-            )
-        await query.answer('Lᴏᴀᴅɪɴɢ..........')
-    elif query.data == "help":
-        buttons = [[
-            InlineKeyboardButton('𝖥𝗂𝗅𝗍𝖾𝗋', callback_data='hud'),
-            InlineKeyboardButton('𝖨𝗆𝖽𝖻', callback_data='imbd'),
-            InlineKeyboardButton('𝖢𝗈𝗇𝗇𝖾𝖼𝗍𝗂𝗈𝗇', callback_data='coct')
+            InlineKeyboardButton('⚡ ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴏsᴇ ᴛʜɪs ʙᴜᴛᴛᴏᴜɴs ⚡', callback_data='ccbb')
             ],[
-            InlineKeyboardButton('𝖥𝗎𝗇', callback_data='fun'),
-            InlineKeyboardButton('𝖠𝖻𝗈𝗎𝗍', callback_data='about_menu'),
-            InlineKeyboardButton('𝖲𝗍𝖺𝗍𝗎𝗌', callback_data='stats')
+            InlineKeyboardButton('👑 ᴏᴡɴᴇʀ', callback_data='owner'),
+            InlineKeyboardButton('👥 ɢʀᴏᴜᴘ', url="https://t.me/cinimaadholokaam")
             ],[
-            InlineKeyboardButton('𝖡𝖺𝗇𝗌', callback_data='ban'),
-            InlineKeyboardButton('𝖢𝗈𝗏𝗂𝖽', callback_data='covid'),
-            InlineKeyboardButton('𝖯𝗂𝗇', callback_data='pin')
-            ],[
-            InlineKeyboardButton('𝖨𝗇𝖿𝗈', callback_data='info'),
-            InlineKeyboardButton('𝖩𝗌𝗈𝗇', callback_data='json'),
-            InlineKeyboardButton('𝖢𝖺𝗋𝖻𝗈𝗇', callback_data='carbon')
-        ]]
+            InlineKeyboardButton('🎬 ᴄʜᴀɴɴᴇʟ', url='https://t.me/Calinkzz'),
+            InlineKeyboardButton('🔐 ᴄʟᴏsᴇ', callback_data='rpclose')
+            ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.HELP_TXT.format(query.from_user.mention),
+            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode='html'
-          )
-    elif query.data == "about":
-        await query.message.delete()
-        await query.message.reply_sticker(
-            'CAACAgQAAxkBAAECr4hiKhTf1qJEeLctIJCsrxk2k5BPmQADEgAC4oetNCxmTn2LSYe8HgQ',
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about_menu')
-                    ],
-                    [
-                        InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='start'),
-                        InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close')
-                    ]
-                ]
-            )
+        )           
+    elif query.data == "owner":
+        buttons = [[
+            InlineKeyboardButton('ᴄᴏɴᴛᴀᴄᴛ', callback_data='pm'),
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='Dback')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        file_id = 'https://telegra.ph/file/21e6b290f8ee4bedd5ebc.jpg'
+        mid =  InputMediaPhoto(file_id, caption=script.OWN_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME))
+        await query.edit_message_media(
+            media = mid,
+            #caption=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup
+            #parse_mode='html'
+        )
+    elif query.data == "Dback":
+        buttons = [[
+            InlineKeyboardButton('⚡ ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴏsᴇ ᴛʜɪs ʙᴜᴛᴛᴏᴜɴs ⚡', callback_data='ccbb')
+            ],[
+            InlineKeyboardButton('👑 ᴏᴡɴᴇʀ', callback_data='owner'),
+            InlineKeyboardButton('👥 ɢʀᴏᴜᴘ', url='https://t.me/cinimaadholokaam')
+            ],[
+            InlineKeyboardButton('🎬 ᴄʜᴀɴɴᴇʟ', url='https://t.me/Calinkzz'),
+            InlineKeyboardButton('🔐 ᴄʟᴏsᴇ', callback_data='rpclose')
+            #],[
+            #InlineKeyboardButton('ꜱʀᴇᴇɴᴀᴛʜ ʙʜᴀꜱɪ ꜰɪʟᴍᴏɢʀᴀᴘʜʏ', callback_data='year')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        file_id = random.choice(PICS)
+        mid =  InputMediaPhoto(file_id, caption=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME))
+        await query.edit_message_media(
+            media = mid,
+            #caption=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup
+            #parse_mode='html'
         )
     elif query.data == "about_menu":
         buttons = [[
