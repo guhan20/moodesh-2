@@ -560,14 +560,14 @@ async def caption(bot, message):
     E = await D.edit_text(f"""<b><i>✅ Report Send Successful ✅</i>
     
 👤 Rᴇᴘᴏʀᴛᴇᴅ ᴜsᴇʀ : {message.from_user.mention}
-🆔 Rᴇᴘᴏʀᴛᴇᴅ ᴜsᴇʀ ɪᴅ : `{message.from_user.id}`
+🆔 Rᴇᴘᴏʀᴛᴇᴅ ᴜsᴇʀ ɪᴅ : <code>{message.from_user.id}</code>
 📝 Rᴇᴘᴏʀᴛ ᴛʀᴀᴄᴋ ɪᴅ : #GT{message.message_id}
 
-<i>💬 ʀᴇᴘᴏʀᴛ ᴛᴇxᴛ :</i> `{_rpt}`
+<i>💬 ʀᴇᴘᴏʀᴛ ᴛᴇxᴛ :</i> <code>{_rpt}</code>
 
-⏲️ ʀᴇᴘᴏʀᴛ ᴛɪᴍᴇ : `{time}`
-🗓️ ʀᴇᴘᴏʀᴛ ᴅᴀᴛᴇ : `{date}`
-⛅ ʀᴇᴘᴏʀᴛ ᴅᴀʏ : `{day}`</b>
+⏲️ ʀᴇᴘᴏʀᴛ ᴛɪᴍᴇ : <code>{time}</code>
+🗓️ ʀᴇᴘᴏʀᴛ ᴅᴀᴛᴇ : <code>{date}</code>
+⛅ ʀᴇᴘᴏʀᴛ ᴅᴀʏ : <code>{day}</code></b>
 delta {do}""")
 
     await E.forward(LOG_CHANNEL)
