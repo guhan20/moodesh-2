@@ -452,7 +452,7 @@ If you do not see the requested movie / series file, look at the next page
         ident, file_id, rid = query.data.split("#")
 
         if int(rid) not in [query.from_user.id, 0]:
-            return await query.answer(UNAUTHORIZED_CALLBACK_TEXT, show_alert=True)
+            return await query.answer(f"മോനെ {query.from_user.first_name} ഇത്‌ നിനക്കുള്ളതല്ല 🤭\n\n {query.message.reply_to_message.from_user.first_name} ന്റെ റിക്യുസ്റ്റ് ആണ് ഇത് 🙂\n\nRequest your own 🥰\n\n© Cinimaadholokam", show_alert=True)
 
         files_ = await get_file_details(file_id)
         if not files_:
