@@ -1,7 +1,8 @@
 import logging
 from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait, UserIsBlocked, PeerIdInvalid
 from info import AUTH_CHANNEL, LONG_IMDB_DESCRIPTION, MAX_LIST_ELM, redirected_env
-from imdb import Cinemagoer
+from imdb import imdb
+
 import asyncio
 from pyrogram.types import Message
 from typing import Union
