@@ -545,7 +545,7 @@ async def caption(bot, message):
     date = present.strftime("%d-%B-%Y")
     day = present.strftime("%A")
     utc = present.strftime("%z")
-    do = timedelta(microseconds=-1)
+    do = timedelta(minutes=5)
     reply_to_message_id=message.from_user.id
     _rpt = rpt.replace("@admin", "").replace("/report", "")
     unixtime = int(datetime.utcnow().timestamp())
