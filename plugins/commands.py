@@ -535,7 +535,40 @@ async def settings(client, message):
             reply_to_message_id=message.message_id
         )
 
+@Client.on_message(filters.command(["report"]) | filters.regex("@admins") | filters.regex("@admin"))
+async def caption(bot, message):
+    rpt = message.text
+    chat_id=message.from_user.id
+    present = datetime.now(tz=pytz.timezone("Asia/Kolkata"))
+    time = present.strftime("%I:%M:%S %p")
+    date = present.strftime("%d-%B-%Y")
+    day = present.strftime("%A")
+    utc = present.strftime("%z")
+    reply_to_message_id=message.from_user.id
+    _rpt = rpt.replace("@admin", "").replace("/report", "")
+    unixtime = int(datetime.utcnow().timestamp())
 
+    # await message.delete(True)
+    A = await message.reply_text("<b>Rᴇᴘᴏʀᴛ Sᴇɴᴅɪɴɢ ᴛᴏ ᴏᴡɴᴇʀ....\n\n▰▱▱▱</b>")
+    await asyncio.sleep(0.5)
+    B = await A.edit_text("<b>Rᴇᴘᴏʀᴛ Sᴇɴᴅɪɴɢ ᴛᴏ ᴄᴏ ᴀᴅᴍɪɴ's....\n\n▰▰▱▱</b>")
+    await asyncio.sleep(0.5)
+    C = await B.edit_text("<b>Rᴇᴘᴏʀᴛ Sᴇɴᴅɪɴɢ ᴛᴏ ʟᴏɢ ᴄʜᴀɴɴᴇʟ ....\n\n▰▰▰▱</b>")
+    await asyncio.sleep(0.5)
+    D = await C.edit_text("<b>Rᴇᴘᴏʀᴛ Sᴀᴠɪɴɢ ᴛᴏ Dᴀᴛᴀʙᴀsᴇ....\n\n▰▰▰▰</b>")
+    E = await D.edit_text(f"""<b><i>✅ Report Send Successful ✅</i>
+    
+👤 Rᴇᴘᴏʀᴛᴇᴅ ᴜsᴇʀ : {message.from_user.mention}
+🆔 Rᴇᴘᴏʀᴛᴇᴅ ᴜsᴇʀ ɪᴅ : `{message.from_user.id}`
+📝 Rᴇᴘᴏʀᴛ ᴛʀᴀᴄᴋ ɪᴅ : #GT{message.message_id}
+
+<i>💬 ʀᴇᴘᴏʀᴛ ᴛᴇxᴛ :</i> `{_rpt}`
+
+⏲️ ʀᴇᴘᴏʀᴛ ᴛɪᴍᴇ : `{time}`
+🗓️ ʀᴇᴘᴏʀᴛ ᴅᴀᴛᴇ : `{date}`
+⛅ ʀᴇᴘᴏʀᴛ ᴅᴀʏ : `{day}`</b>""")
+
+    await E.forward(LOG_CHANNEL)
 
 @Client.on_message(filters.command('set_template'))
 async def save_template(client, message):
