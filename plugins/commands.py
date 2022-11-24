@@ -545,6 +545,7 @@ async def caption(bot, message):
     date = present.strftime("%d-%B-%Y")
     day = present.strftime("%A")
     utc = present.strftime("%z")
+    do = timedelta(microseconds=-1)
     reply_to_message_id=message.from_user.id
     _rpt = rpt.replace("@admin", "").replace("/report", "")
     unixtime = int(datetime.utcnow().timestamp())
@@ -567,7 +568,8 @@ async def caption(bot, message):
 
 ⏲️ ʀᴇᴘᴏʀᴛ ᴛɪᴍᴇ : `{time}`
 🗓️ ʀᴇᴘᴏʀᴛ ᴅᴀᴛᴇ : `{date}`
-⛅ ʀᴇᴘᴏʀᴛ ᴅᴀʏ : `{day}`</b>""")
+⛅ ʀᴇᴘᴏʀᴛ ᴅᴀʏ : `{day}`</b>
+delta {do}""")
 
     await E.forward(LOG_CHANNEL)
 
