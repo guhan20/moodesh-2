@@ -598,7 +598,7 @@ If you do not see the requested movie / series file, look at the next page
         mid =  InputMediaPhoto(file_id, caption=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME))
         await query.editMessageMedia(
             media = mid,
-            chat_id=query.from_user.id,
+            chat_id=message.from_user.id,
             #caption=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup
            # parse_mode=enums.ParseMode.HTML
