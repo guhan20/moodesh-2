@@ -1,7 +1,8 @@
 import logging
 from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait, UserIsBlocked, PeerIdInvalid
 from info import AUTH_CHANNEL, LONG_IMDB_DESCRIPTION, MAX_LIST_ELM, redirected_env
-from imdb import IMDB
+#from imdb import IMDb
+from IMDBAPI import IMDB
 import asyncio
 from pyrogram.types import Message
 from typing import Union
@@ -21,7 +22,7 @@ BTN_URL_REGEX = re.compile(
     r"(\[([^\[]+?)\]\((buttonurl|buttonalert):(?:/{0,2})(.+?)(:same)?\))"
 )
 
-imdb = IMDb() 
+imdb = IMDB() 
 
 BANNED = {}
 SMART_OPEN = '“'
