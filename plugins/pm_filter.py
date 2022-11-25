@@ -463,6 +463,8 @@ If you do not see the requested movie / series file, look at the next page
         mention = query.from_user.mention
         f_caption = files.caption
         settings = await get_settings(query.message.chat.id)
+        pre = 'Chat' if settings['redirect_to'] == 'Chat' else 'files'
+        settings = await get_settings(query.message.chat.id)
         if CUSTOM_FILE_CAPTION:
             try:
                 f_caption = CUSTOM_FILE_CAPTION.format(file_name='' if title is None else title,
@@ -495,7 +497,7 @@ If you do not see the requested movie / series file, look at the next page
                     [
                         [
                             InlineKeyboardButton(f'🌿 Fɪʟᴇ sɪᴢᴇ【 {get_size(files.file_size)} 】🌿', callback_data="rpc"),
-                            InlineKeyboardButton('💌 ᴇɴᴅ ᴘᴍ 💌', callback_data="Chat")
+                            InlineKeyboardButton('💌 ᴇɴᴅ ᴘᴍ 💌', callback_data=f'{pre}#{file.file_id}#{query.from_user.id}')
                         ],                       
                         [
                             InlineKeyboardButton('📥 ᴍᴏᴠɪᴇ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ 📥 ', url = msg.link)
