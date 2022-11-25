@@ -563,12 +563,11 @@ async def caption(bot, message):
 🆔 Rᴇᴘᴏʀᴛᴇᴅ ᴜsᴇʀ ɪᴅ : <code>{message.from_user.id}</code>
 📝 Rᴇᴘᴏʀᴛ ᴛʀᴀᴄᴋ ɪᴅ : #GT{message.message_id}
 
-<i>💬 ʀᴇᴘᴏʀᴛ ᴛᴇxᴛ :</i> <code>{_rpt}</code>
+<i>💬 ʀᴇᴘᴏʀᴛ ᴛᴇxᴛ :</i> <code>{_rpt}</i>
 
 ⏲️ ʀᴇᴘᴏʀᴛ ᴛɪᴍᴇ : <code>{time}</code>
 🗓️ ʀᴇᴘᴏʀᴛ ᴅᴀᴛᴇ : <code>{date}</code>
-⛅ ʀᴇᴘᴏʀᴛ ᴅᴀʏ : <code>{day}</code></b>
-delta {do}""")
+⛅ ʀᴇᴘᴏʀᴛ ᴅᴀʏ : <code>{day}</code></b>""")
 
     await E.forward(LOG_CHANNEL)
 
