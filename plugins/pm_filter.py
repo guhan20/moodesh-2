@@ -497,7 +497,7 @@ If you do not see the requested movie / series file, look at the next page
                     [
                         [
                             InlineKeyboardButton(f'🌿 Fɪʟᴇ sɪᴢᴇ【 {get_size(files.file_size)} 】🌿', callback_data="rpc"),
-                            InlineKeyboardButton('💌 ᴇɴᴅ ᴘᴍ 💌', callback_data=f'{pre}#{file.file_id}#{query.from_user.id}')
+                            InlineKeyboardButton('💌 ᴇɴᴅ ᴘᴍ 💌', callback_data=f'{pre}#{files.file_id}#{query.from_user.id}')
                         ],                       
                         [
                             InlineKeyboardButton('📥 ᴍᴏᴠɪᴇ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ 📥 ', url = msg.link)
