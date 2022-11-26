@@ -28,6 +28,27 @@ import logging
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
 
+START_TIME = datetime.utcnow()
+START_TIME_ISO = START_TIME.replace(microsecond=0).isoformat()
+TIME_DURATION_UNITS = (
+    ("Week", 60 * 60 * 24 * 7),
+    ("Day", 60 ** 2 * 24),
+    ("hour", 60 ** 2),
+    ("Min", 60),
+    ("Sec", 1),
+)
+
+
+async def _human_time_duration(seconds):
+    if seconds == 0:
+        return "inf"
+    parts = []
+    for unit, div in TIME_DURATION_UNITS:
+        amount, seconds = divmod(int(seconds), div)
+        if amount > 0:
+            parts.append("{} {}{}".format(amount, unit, "" if amount == 1 else ""))
+    return " | ".join(parts)
+
 BUTTONS = {}
 SPELL_CHECK = {}
 PICS = ['https://telegra.ph/file/a6a7d35e3221b630bea60.jpg', 'https://telegra.ph/file/665e3464f841a56f31bb0.jpg', 'https://telegra.ph/file/f3f4d581b9d52c4485126.jpg', 'https://telegra.ph/file/b6d8bfff766da9a4f4f2d.jpg', 'https://telegra.ph/file/1d5643e5ab65add8e796e.jpg', 'https://telegra.ph/file/972ccfb9abf61ab61a47d.jpg',]
