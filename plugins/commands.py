@@ -114,7 +114,7 @@ Sᴏʀʀʏ ɪ ᴏɴʟʏ ᴡᴏʀᴋ ᴏɴ <a href=https://t.me/cinimaadholokaam>
         btn = [
             [
                 InlineKeyboardButton("ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=invite_link.invite_link),
-                InlineKeyboardButton("ᴍᴇ ᴊᴏɪɴᴇᴅ", callback_data=f"{pre}#{file_id}")
+                InlineKeyboardButton("ᴡʜʏ ᴊᴏɪɴ", callback_data=f"whyjoin")
             ]
         ]
 
@@ -122,7 +122,7 @@ Sᴏʀʀʏ ɪ ᴏɴʟʏ ᴡᴏʀᴋ ᴏɴ <a href=https://t.me/cinimaadholokaam>
         if message.command[1] != "subscribe":
             kk, file_id = message.command[1].split("_", 1)
             pre = 'checksubp' if kk == 'filep' else 'checksub'
-            btn.append([InlineKeyboardButton("Hᴇʏ Bᴏᴛ....! Wʜʏ I'ᴍ ᴊᴏɪɴɪɴɢ", callback_data="whyjoin")])
+            btn.append([InlineKeyboardButton("ᴍᴇ ᴊᴏɪɴᴇᴅ ɪɴ ᴄʜᴀɴɴᴇʟ", callback_data=f"{pre}#{file_id}")])
         await message.delete(True)
         await client.send_message(
             chat_id=message.from_user.id,
