@@ -523,7 +523,7 @@ If you do not see the requested movie / series file, look at the next page
                     [
                         
                             InlineKeyboardButton('📥 ᴍᴏᴠɪᴇ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ 📥 ', url = msg.link)
-                        ]
+                        
                     ]
                 )
             )
