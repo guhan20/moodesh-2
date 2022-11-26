@@ -513,6 +513,7 @@ If you do not see the requested movie / series file, look at the next page
                     ]
                 )
             )
+            butt = [[InlineKeyboardButton('📥 ᴍᴏᴠɪᴇ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ 📥 ', url = msg.link)]]
             msg1 = await query.message.reply(
                 f'<b> ʜᴇʟʟᴏ {query.from_user.mention} {get}  </b> \n\n<b>📫 Your File is Ready</b>\n\n'           
                 f'<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>{title}</code>\n\n'              
@@ -520,10 +521,7 @@ If you do not see the requested movie / series file, look at the next page
                 True,
                 'html',
                 reply_markup=InlineKeyboardMarkup(butt))
-                butt = [[
-                        
-                        InlineKeyboardButton('📥 ᴍᴏᴠɪᴇ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ 📥 ', url = msg.link)
-                ]]
+                
            #     )
       #      )
             await query.answer(f'ʜᴇʏ {query.from_user.first_name} ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴅʏ 😴\n\n𝙥𝙡𝙚𝙖𝙨𝙚 𝙘𝙡𝙞𝙘𝙠 @ 𝙗𝙪𝙩𝙩𝙤𝙣 💡',)
