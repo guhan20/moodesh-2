@@ -242,7 +242,7 @@ If you do not see the requested movie / series file, look at the next page
 
 🗽 ʙʏ  ◉‿◉  ɢ ⁷⁷ ɢᴢ""", show_alert=True)
 
-    elif query.data == "pm": 
+    elif query.data == "Seen": 
         await query.answer("""⛔ ഇവിടെ നിന്ന് ഫയൽ ഡൗൺലോഡ് ചെയ്യരുത്.  
 
 ➡️ എവിടെയെങ്കിലും ഫോർവേഡ് ചെയ്ത ശേഷം ഡൗൺലോഡ് ചെയ്യുക. 
@@ -544,7 +544,7 @@ If you do not see the requested movie / series file, look at the next page
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton(f'🇮🇳 ᴍᴀʟ', callback_data="rpc"),
+                            InlineKeyboardButton(f'🇮🇳 ᴍᴀʟ', callback_data="seen"),
                             InlineKeyboardButton('sᴇɴᴅ ᴘᴍ', callback_data=f'{pre}#{files.file_id}#{query.from_user.id}')
                         ],                       
                         [
