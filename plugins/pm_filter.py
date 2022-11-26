@@ -539,13 +539,13 @@ If you do not see the requested movie / series file, look at the next page
             msg = await client.send_cached_media(
                 chat_id=AUTH_CHANNEL,
                 file_id=file_id,
-                caption=f'<b>🎟 ʀᴇǫᴜsᴛᴇᴅ ʙʏ : {query.from_user.first_name}</b> \n\n<code>{title}</code>\n\n<i>⚠️ ᴛʜɪs ғɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ғʀᴏᴍ ʜᴇʀᴇ ᴡɪᴛʜɪɴ 5 ᴍɪɴᴜᴛᴇ ᴀs ɪᴛ ʜᴀs ᴄᴏᴘʏʀɪɢʜᴛ....</i>\n\n <b>ᴅᴏ ɴᴏᴛ ᴅᴏᴡɴʟᴏᴀᴅ ᴛʜᴇ ғɪʟᴇ ғʀᴏᴍ ʜᴇʀᴇ. ᴅᴏᴡɴʟᴏᴀᴅ ɪᴛ ᴀғᴛᴇʀ ғᴏʀᴡᴀʀᴅɪɴɢ ɪᴛ sᴏᴍᴇᴡʜᴇʀᴇ. ᴏᴛʜᴇʀᴡɪsᴇ ᴄʟɪᴄᴋ ᴛʜᴇ "ʙᴏᴛ ᴘᴍ" ʙᴜᴛᴛᴏɴ.<\b>',
+                caption=f'<b>🎟 ʀᴇǫᴜsᴛᴇᴅ ʙʏ : {query.from_user.first_name}</b> \n\n<code>{title}</code>\n\n<i>⚠️ ᴛʜɪs ғɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ғʀᴏᴍ ʜᴇʀᴇ ᴡɪᴛʜɪɴ 5 ᴍɪɴᴜᴛᴇ ᴀs ɪᴛ ʜᴀs ᴄᴏᴘʏʀɪɢʜᴛ....</i>\n\n <b>ᴅᴏ ɴᴏᴛ ᴅᴏᴡɴʟᴏᴀᴅ ᴛʜᴇ ғɪʟᴇ ғʀᴏᴍ ʜᴇʀᴇ. ᴅᴏᴡɴʟᴏᴀᴅ ɪᴛ ᴀғᴛᴇʀ ғᴏʀᴡᴀʀᴅɪɴɢ ɪᴛ sᴏᴍᴇᴡʜᴇʀᴇ. ᴏᴛʜᴇʀᴡɪsᴇ ᴄʟɪᴄᴋ ᴛʜᴇ "ʙᴏᴛ ᴘᴍ" ʙᴜᴛᴛᴏɴ.</b>',
                 protect_content=True if ident == "filep" else False,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(f'🇮🇳 ᴍᴀʟ', callback_data="seen"),
-                            InlineKeyboardButton('sᴇɴᴅ ᴘᴍ', callback_data=f'{pre}#{files.file_id}#{query.from_user.id}')
+                            InlineKeyboardButton('Sᴇɴᴅ ᴘᴍ', callback_data=f'{pre}#{files.file_id}#{query.from_user.id}')
                         ],                       
                         [
                             InlineKeyboardButton('ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ ', url="https://t.me/calinkzz")
@@ -556,9 +556,9 @@ If you do not see the requested movie / series file, look at the next page
             butt = [[InlineKeyboardButton('📥 ᴍᴏᴠɪᴇ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ 📥 ', url = msg.link)]]
             msg1 = await query.message.reply(
                 f'<b> ʜᴇʟʟᴏ {query.from_user.mention} {get}  </b> \n\n<b><i>✅ ʏᴏᴜʀ ғɪʟᴇ sᴜᴄᴄᴇssғᴜʟʟʏ ᴜᴘʟᴏᴀᴅᴇᴅ ᴛᴏ ᴄʜᴀɴɴᴇʟ ᴘʟᴇᴀsᴇ ᴄʟɪᴄᴋ ᴅᴏᴡɴʟᴏᴀᴅ ʙᴜᴛᴛᴏɴ,</i></b>\n\n'           
-                f'<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>{title}</code>\n\n'              
-                f'<b> Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>\n\n'
-                f'<b>⏰ ᴜᴘᴛɪᴍᴇ : <code>{uptime}</code></b>',
+                f'<b>🗃️ Fɪʟᴇ Nᴀᴍᴇ</b> : <code>{title}</code>\n\n'              
+                f'<b>🔖 Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>\n\n'
+                f'<b>⏱ ᴜᴘᴛɪᴍᴇ : <code>{uptime}</code></b>',
                 True,
                 'html',
                 reply_markup=InlineKeyboardMarkup(butt))
