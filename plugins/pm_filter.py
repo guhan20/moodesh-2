@@ -465,6 +465,21 @@ If you do not see the requested movie / series file, look at the next page
         settings = await get_settings(query.message.chat.id)
         pre = 'Chat' if settings['redirect_to'] == 'botpm' else 'files'
         settings = await get_settings(query.message.chat.id)
+        m = datetime.now()
+
+        time = m.hour
+
+        if time < 6:
+            get="Gᴏᴏᴅ Mᴏʀɴɪɴɢ  🌅" 
+        elif time < 12:
+            get="Gᴏᴏᴅ Aғᴛᴇʀɴᴏᴏɴ ☕"
+        elif time < 17:
+            get="Gᴏᴏᴅ Eᴠᴀɴɪɴɢ ⛱️"
+        elif time < 20: 
+            get="Gᴏᴏᴅ Nɪɢʜᴛ 🌙"
+        else:
+            get="Gᴏᴏᴅ Nɪɢʜᴛ"
+
         if CUSTOM_FILE_CAPTION:
             try:
                 f_caption = CUSTOM_FILE_CAPTION.format(file_name='' if title is None else title,
@@ -499,24 +514,20 @@ If you do not see the requested movie / series file, look at the next page
                 )
             )
             msg1 = await query.message.reply(
-                f'<b> Hai 👋 {query.from_user.mention} </b>😍\n\n<b>📫 Your File is Ready</b>\n\n'           
+                f'<b> ʜᴇʟʟᴏ {query.from_user.mention} {get}  </b> \n\n<b>📫 Your File is Ready</b>\n\n'           
                 f'<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>{title}</code>\n\n'              
                 f'<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>',
                 True,
                 'html',
                 reply_markup=InlineKeyboardMarkup(
                     [
-                        [
-                            InlineKeyboardButton(f'【 {get_size(files.file_size)} 】', callback_data="rpc"),
-                            InlineKeyboardButton('💌 sᴇɴᴅ ᴘᴍ 💌', callback_data=f'{pre}#{files.file_id}#{query.from_user.id}')
-                        ],                       
-                        [
+                        
                             InlineKeyboardButton('📥 ᴍᴏᴠɪᴇ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ 📥 ', url = msg.link)
                         ]
                     ]
                 )
             )
-            await query.answer(f'ʜᴇʏ {query.from_user.first_name} ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴅʏ 😴\n\𝙥𝙡𝙚𝙖𝙨𝙚 𝙘𝙡𝙞𝙘𝙠 @ 𝙗𝙪𝙩𝙩𝙤𝙣 💡',)
+            await query.answer(f'ʜᴇʏ {query.from_user.first_name} ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴅʏ 😴\n\n𝙥𝙡𝙚𝙖𝙨𝙚 𝙘𝙡𝙞𝙘𝙠 @ 𝙗𝙪𝙩𝙩𝙤𝙣 💡',)
           #  await asyncio.sleep(300)
            # await msg1.delete()
           #  await msg.delete()
