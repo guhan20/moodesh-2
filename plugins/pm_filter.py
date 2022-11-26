@@ -431,7 +431,7 @@ If you do not see the requested movie / series file, look at the next page
         ident, file_id, rid = query.data.split("#")
 
         if int(rid) not in [query.from_user.id, 0]:
-            return await query.answer("🙄", show_alert=True)
+            return await query.answer(f"അല്ലയോ {query.from_user.first_name} അങ്ങുന്നേ.. സ്വന്തമായി മൂവി REQUEST ചെയ്താലും 😁\n\n ʀᴇǫᴜᴇsᴛ  ʏᴏᴜʀ ᴏᴡɴ ғɪʟᴇ , ᴅᴏɴ'ᴛ ᴄʟɪᴄᴋ ᴏᴛʜᴇʀs ʀᴇǫᴜᴇsᴛᴇᴅ ғɪʟᴇs. 🤦‍♂️", show_alert=True)
 
         files_ = await get_file_details(file_id)
         if not files_:
@@ -558,8 +558,8 @@ If you do not see the requested movie / series file, look at the next page
                 
            #     )
       #      )
-            await query.answer(f'ʜᴇʏ {query.from_user.first_name} ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴅʏ 😴\n\n𝙥𝙡𝙚𝙖𝙨𝙚 𝙘𝙡𝙞𝙘𝙠 @ 𝙗𝙪𝙩𝙩𝙤𝙣 💡',)
-          #  await asyncio.sleep(300)
+            await query.answer(f'ʜᴇʏ {query.from_user.first_name} ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴅʏ 😴\n\n𝙥𝙡𝙚𝙖𝙨𝙚 𝙘𝙡𝙞𝙘𝙠 @ 𝙗𝙪𝙩𝙩𝙤𝙣 💡', show_alert=True)
+          #  await asyncio.sleep(300) 
            # await msg1.delete()
           #  await msg.delete()
           #  del msg1, msg
