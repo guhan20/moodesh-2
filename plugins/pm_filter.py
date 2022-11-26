@@ -544,7 +544,7 @@ If you do not see the requested movie / series file, look at the next page
                 f'<b> ʜᴇʟʟᴏ {query.from_user.mention} {get}  </b> \n\n<b><i>✅ ʏᴏᴜʀ ғɪʟᴇ sᴜᴄᴄᴇssғᴜʟʟʏ ᴜᴘʟᴏᴀᴅᴇᴅ ᴛᴏ ᴄʜᴀɴɴᴇʟ ᴘʟᴇᴀsᴇ ᴄʟɪᴄᴋ ᴅᴏᴡɴʟᴏᴀᴅ ʙᴜᴛᴛᴏɴ,</i></b>\n\n'           
                 f'<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>{title}</code>\n\n'              
                 f'<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>\n\n'
-                f'<b>⏲️ ᴛɪᴍᴇ : <code>{time}</code>\n🗓️ᴅᴀᴛᴇ : <code>{date}</code>\n⛅ᴅᴀʏ : <code>{day}</code>,
+                f'<b>⏲️ ᴛɪᴍᴇ : <code>{time}</code>\n🗓️ᴅᴀᴛᴇ : <code>{date}</code>\n⛅ᴅᴀʏ : <code>{day}</code>',
                 True,
                 'html',
                 reply_markup=InlineKeyboardMarkup(butt))
