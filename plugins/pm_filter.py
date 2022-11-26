@@ -485,8 +485,19 @@ If you do not see the requested movie / series file, look at the next page
                 chat_id=AUTH_CHANNEL,
                 file_id=file_id,
                 caption=f'<b>Hai 👋 {query.from_user.mention}</b> 😍\n\n<code>{title}</code>\n\n⚠️ <i>This file will be deleted from here within 5 minute as it has copyright ... !!!</i>\n\n<i>കോപ്പിറൈറ്റ് ഉള്ളതുകൊണ്ട് ഫയൽ 5 മിനിറ്റിനുള്ളിൽ ഇവിടെനിന്നും ഡിലീറ്റ് ആകുന്നതാണ് അതുകൊണ്ട് ഇവിടെ നിന്നും മറ്റെവിടെക്കെങ്കിലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക!</i>\n\n<i><b>⚡ Powered by {query.message.chat.title}</b></i>',
-                protect_content=True if ident == "filep" else False 
-            )
+                protect_content=True if ident == "filep" else False,
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(f'【 {get_size(files.file_size)} 】', callback_data="rpc"),
+                            InlineKeyboardButton('sᴇɴᴅ ᴘᴍ', callback_data=f'{pre}#{files.file_id}#{query.from_user.id}')
+                        ],                       
+                        [
+                            InlineKeyboardButton('ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ ', url="https://t.me/calinkzz")
+                        ]
+                    ]
+                )
+            
             msg1 = await query.message.reply(
                 f'<b> Hai 👋 {query.from_user.mention} </b>😍\n\n<b>📫 Your File is Ready</b>\n\n'           
                 f'<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>{title}</code>\n\n'              
@@ -505,7 +516,7 @@ If you do not see the requested movie / series file, look at the next page
                     ]
                 )
             )
-            await query.answer(f'ʜᴇʏ {query.from_user.first_name} ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴅʏ 😴\n\nᴘʟᴇᴀsᴇ ᴄʟɪᴄᴋ @ ʙᴜᴛᴛᴏɴ ',)
+            await query.answer(f'ʜᴇʏ {query.from_user.first_name} ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴅʏ 😴\n\𝙥𝙡𝙚𝙖𝙨𝙚 𝙘𝙡𝙞𝙘𝙠 @ 𝙗𝙪𝙩𝙩𝙤𝙣 💡',)
           #  await asyncio.sleep(300)
            # await msg1.delete()
           #  await msg.delete()
