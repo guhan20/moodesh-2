@@ -29,6 +29,9 @@ import logging
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
 
+#########################################################################################
+
+
 START_TIME = datetime.utcnow()
 START_TIME_ISO = START_TIME.replace(microsecond=0).isoformat()
 TIME_DURATION_UNITS = (
@@ -49,6 +52,8 @@ async def _human_time_duration(seconds):
         if amount > 0:
             parts.append("{} {}{}".format(amount, unit, "" if amount == 1 else ""))
     return " | ".join(parts)
+
+#################################################################################################
 
 BUTTONS = {}
 SPELL_CHECK = {}
