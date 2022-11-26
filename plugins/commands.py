@@ -120,7 +120,9 @@ Sᴏʀʀʏ ɪ ᴏɴʟʏ ᴡᴏʀᴋ ᴏɴ <a href=https://t.me/cinimaadholokaam>
 
 
         if message.command[1] != "subscribe":
-            btn.append([InlineKeyboardButton("Hᴇʏ Bᴏᴛ....! Wʜʏ I'ᴍ ᴊᴏɪɴɪɴɢ", callback_data="whyjoin")])
+        kk, file_id = message.command[1].split("_", 1)
+        pre = 'checksubp' if kk == 'filep' else 'checksub
+        btn.append([InlineKeyboardButton("Hᴇʏ Bᴏᴛ....! Wʜʏ I'ᴍ ᴊᴏɪɴɪɴɢ", callback_data="whyjoin")])
         await message.delete(True)
         await client.send_message(
             chat_id=message.from_user.id,
