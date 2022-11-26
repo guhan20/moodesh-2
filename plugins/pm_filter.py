@@ -404,7 +404,7 @@ If you do not see the requested movie / series file, look at the next page
         ident, file_id, rid = query.data.split("#")
 
         if int(rid) not in [query.from_user.id, 0]:
-            return await query.answer(UNAUTHORIZED_CALLBACK_TEXT, show_alert=True)
+            return await query.answer(🙄, show_alert=True)
 
         files_ = await get_file_details(file_id)
         if not files_:
