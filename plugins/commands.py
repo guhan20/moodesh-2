@@ -131,8 +131,8 @@ Sᴏʀʀʏ ɪ ᴏɴʟʏ ᴡᴏʀᴋ ᴏɴ <a href=https://t.me/cinimaadholokaam>
 
 Fɪʀsᴛ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ【 <a href="https://t.me/CinimaAdholokaam">ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ</a> 】ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴊᴏɪɴ ᴛʜᴇ ᴄʜᴀɴɴᴇʟ. ᴛʜᴇɴ ᴄᴏᴍᴇ ʙᴀᴄᴋ ᴛᴏ ᴛʜᴇ ʙᴏᴛ ᴄʟɪᴄᴋ ᴏɴ【 <a href="https://t.me/BhasiRobot">ᴍᴇ ᴊᴏɪɴᴇᴅ</a> 】ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ᴛʜᴇ ғɪʟᴇ...</b>""",
             reply_markup=InlineKeyboardMarkup(btn),
-            parse_mode=enums.ParseMode.HTML,
-           # parse_mode="html", 
+            #parse_mode=enums.ParseMode.HTML,
+            parse_mode="html", 
             disable_web_page_preview=True
             )
         return
