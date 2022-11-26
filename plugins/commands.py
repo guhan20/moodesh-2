@@ -113,16 +113,15 @@ Sᴏʀʀʏ ɪ ᴏɴʟʏ ᴡᴏʀᴋ ᴏɴ <a href=https://t.me/cinimaadholokaam>
             return
         btn = [
             [
-                InlineKeyboardButton(
-                    "🤖 Join Updates Channel", url=invite_link.invite_link
-                )
+                InlineKeyboardButton("ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=invite_link.invite_link),
+                InlineKeyboardButton("ʀᴇᴀsᴏɴ ?", callback_data=f"whyjoin")
             ]
         ]
 
         if message.command[1] != "subscribe":
             kk, file_id = message.command[1].split("_", 1)
             pre = 'checksubp' if kk == 'filep' else 'checksub' 
-            btn.append([InlineKeyboardButton(" 🔄 Try Again", callback_data=f"{pre}#{file_id}")])
+            btn.append([InlineKeyboardButton(" ᴍᴇ ᴊᴏɪɴᴇᴅ ɪɴ ᴄʜᴀɴɴᴇʟ", callback_data=f"{pre}#{file_id}")])
         await message.delete(True)
         await client.send_message(
             chat_id=message.from_user.id,
