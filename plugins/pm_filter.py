@@ -413,6 +413,11 @@ If you do not see the requested movie / series file, look at the next page
         title = files.file_name
         size = get_size(files.file_size)
         mention = query.from_user.mention
+        present = datetime.now(tz=pytz.timezone("Asia/Kolkata"))
+        time = present.strftime("%I:%M:%S %p")
+        date = present.strftime("%d-%B-%Y")
+        day = present.strftime("%A")
+        utc = present.strftime("%z")
         f_caption = files.caption
         settings = await get_settings(query.message.chat.id)
         if CUSTOM_FILE_CAPTION:
@@ -515,9 +520,10 @@ If you do not see the requested movie / series file, look at the next page
             )
             butt = [[InlineKeyboardButton('📥 ᴍᴏᴠɪᴇ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ 📥 ', url = msg.link)]]
             msg1 = await query.message.reply(
-                f'<b> ʜᴇʟʟᴏ {query.from_user.mention} {get}  </b> \n\n<b>📫 Your File is Ready</b>\n\n'           
+                f'<b> ʜᴇʟʟᴏ {query.from_user.mention} {get}  </b> \n\n<b><i>✅ ʏᴏᴜʀ ғɪʟᴇ sᴜᴄᴄᴇssғᴜʟʟʏ ᴜᴘʟᴏᴀᴅᴇᴅ ᴛᴏ ᴄʜᴀɴɴᴇʟ ᴘʟᴇᴀsᴇ ᴄʟɪᴄᴋ ᴅᴏᴡɴʟᴏᴀᴅ ʙᴜᴛᴛᴏɴ,</i></b>\n\n'           
                 f'<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>{title}</code>\n\n'              
-                f'<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>',
+                f'<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>\n\n'
+                f'<b>⏲️ ᴛɪᴍᴇ : <code>{time}</code>\n🗓️ᴅᴀᴛᴇ : <code>{date}</code>\n⛅ᴅᴀʏ : <code>{day}</code>,
                 True,
                 'html',
                 reply_markup=InlineKeyboardMarkup(butt))
@@ -577,7 +583,7 @@ If you do not see the requested movie / series file, look at the next page
         buttons = [[
             InlineKeyboardButton('⚡ ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴏsᴇ ᴛʜɪs ʙᴜᴛᴛᴏᴜɴs ⚡', callback_data='ccbb')
             ],[
-            InlineKeyboardButton('👑 ᴏᴡɴᴇʀ', callback_data='owner'),
+            InlineKeyboardButton('👑 ᴏᴡɴᴇʀ', callback_data='pm'),
             InlineKeyboardButton('👥 ɢʀᴏᴜᴘ', url="https://t.me/cinimaadholokaam")
             ],[
             InlineKeyboardButton('🎬 ᴄʜᴀɴɴᴇʟ', url='https://t.me/Calinkzz'),
@@ -607,7 +613,7 @@ If you do not see the requested movie / series file, look at the next page
         buttons = [[
             InlineKeyboardButton('⚡ ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴏsᴇ ᴛʜɪs ʙᴜᴛᴛᴏᴜɴs ⚡', callback_data='ccbb')
             ],[
-            InlineKeyboardButton('👑 ᴏᴡɴᴇʀ', callback_data='owner'),
+            InlineKeyboardButton('👑 ᴏᴡɴᴇʀ', callback_data='pm'),
             InlineKeyboardButton('👥 ɢʀᴏᴜᴘ', url='https://t.me/cinimaadholokaam')
             ],[
             InlineKeyboardButton('🎬 ᴄʜᴀɴɴᴇʟ', url='https://t.me/Calinkzz'),
