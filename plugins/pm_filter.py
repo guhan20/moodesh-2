@@ -463,7 +463,7 @@ If you do not see the requested movie / series file, look at the next page
         mention = query.from_user.mention
         f_caption = files.caption
         settings = await get_settings(query.message.chat.id)
-        pre = 'Chat' if settings['botpm'] == 'Chat' else 'files'
+        pre = 'Chat' if settings['redirect_to'] == 'PM' else 'files'
         settings = await get_settings(query.message.chat.id)
         if CUSTOM_FILE_CAPTION:
             try:
@@ -489,15 +489,15 @@ If you do not see the requested movie / series file, look at the next page
             )
             msg1 = await query.message.reply(
                 f'<b> Hai 👋 {query.from_user.mention} </b>😍\n\n<b>📫 Your File is Ready</b>\n\n'           
-                f'<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>[DK_BOTx] {title}</code>\n\n'              
+                f'<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>{title}</code>\n\n'              
                 f'<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>',
                 True,
                 'html',
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton(f'🌿 Fɪʟᴇ sɪᴢᴇ【 {get_size(files.file_size)} 】🌿', callback_data="rpc"),
-                            InlineKeyboardButton('💌 ᴇɴᴅ ᴘᴍ 💌', callback_data=f'{pre}#{files.file_id}#{query.from_user.id}')
+                            InlineKeyboardButton(f'【 {get_size(files.file_size)} 】', callback_data="rpc"),
+                            InlineKeyboardButton('💌 sᴇɴᴅ ᴘᴍ 💌', callback_data=f'{pre}#{files.file_id}#{query.from_user.id}')
                         ],                       
                         [
                             InlineKeyboardButton('📥 ᴍᴏᴠɪᴇ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ 📥 ', url = msg.link)
@@ -505,7 +505,7 @@ If you do not see the requested movie / series file, look at the next page
                     ]
                 )
             )
-            await query.answer('Check Out The Chat',)
+            await query.answer('click @ button 😴',)
           #  await asyncio.sleep(300)
            # await msg1.delete()
           #  await msg.delete()
