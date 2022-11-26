@@ -463,7 +463,7 @@ If you do not see the requested movie / series file, look at the next page
         mention = query.from_user.mention
         f_caption = files.caption
         settings = await get_settings(query.message.chat.id)
-        pre = 'Chat' if settings['redirect_to'] == 'botpm' else 'file'
+        pre = 'Chat' if settings['redirect_to'] == 'botpm' else 'files'
         settings = await get_settings(query.message.chat.id)
         if CUSTOM_FILE_CAPTION:
             try:
