@@ -289,14 +289,25 @@ Fɪʀsᴛ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ【 <a href="https://t.me/CinimaAdholokaam
         except Exception as e:
             logger.exception(e)
             f_caption=f_caption
-    if f_caption is None:
-        f_caption = f"{files.file_name}"
+    f f_caption is None:
+        f_caption = f"<code>{files.file_name}</code>"
+    buttons = [
+        [
+            InlineKeyboardButton(f'🚸 ᴅᴇʟᴇᴛᴇ', callback_data="rpclose"),
+            InlineKeyboardButton('💞 sʜᴀʀᴇ', url="https://t.me/share/url?url=**😱%20സിനിമ%20അധോലോകം%20😱%0A%0Aഏത്%20അർധരാത്രി%20ചോദിച്ചാലും%20പടം%20കിട്ടും,%20ലോകത്തിലെ%20ഒട്ടുമിക്ക%20ഭാഷകളിലുമുള്ള%20സിനിമകളുടെ%20കളക്ഷൻ..%20❤️%0A%0A👇%20GROUP%20LINK%20👇%0A@CinimaAdholokaam%0A@CinimaAdholokaam%0A@CinimaAdholokam**")
+        ],
+        [
+            InlineKeyboardButton(f'🌿 Fɪʟᴇ sɪᴢᴇ【 {get_size(files.file_size)} 】🌿', callback_data="rpc")
+        ]
+        ]
+    await message.delete(True)
     await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
         reply_to_message_id=message.from_user.id,
-        protect_content=True if pre == 'filep' else False
+        protect_content=True if pre == 'filep' else False,
+        reply_markup=InlineKeyboardMarkup(buttons)
         )
                     
 
