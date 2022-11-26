@@ -433,13 +433,6 @@ If you do not see the requested movie / series file, look at the next page
             return await query.answer('No such file exist.')
         files = files_[0]
         title = files.file_name
-        size = get_size(files.file_size)
-        mention = query.from_user.mention
-        present = datetime.now(tz=pytz.timezone("Asia/Kolkata"))
-        time = present.strftime("%I:%M:%S %p")
-        date = present.strftime("%d-%B-%Y")
-        day = present.strftime("%A")
-        utc = present.strftime("%z")
         f_caption = files.caption
         settings = await get_settings(query.message.chat.id)
         if CUSTOM_FILE_CAPTION:
@@ -489,6 +482,11 @@ If you do not see the requested movie / series file, look at the next page
         size = get_size(files.file_size)
         mention = query.from_user.mention
         f_caption = files.caption
+        present = datetime.now(tz=pytz.timezone("Asia/Kolkata"))
+        time = present.strftime("%I:%M:%S %p")
+        date = present.strftime("%d-%B-%Y")
+        day = present.strftime("%A")
+        utc = present.strftime("%z")
         settings = await get_settings(query.message.chat.id)
         pre = 'Chat' if settings['redirect_to'] == 'botpm' else 'files'
         settings = await get_settings(query.message.chat.id)
