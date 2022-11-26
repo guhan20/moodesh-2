@@ -427,7 +427,7 @@ async def delete_all_index_confirm(bot, message):
     await message.message.edit('Succesfully Deleted All The Indexed Files.')
 
 
-@Client.on_message(filters.command('settings'))
+@Client.on_message(filters.command('settings') & filters.user(ADMINS))
 async def settings(client, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
@@ -582,6 +582,32 @@ async def caption(bot, message):
 ⛅ ʀᴇᴘᴏʀᴛ ᴅᴀʏ : <code>{day}</code></b>""")
 
     await E.forward(LOG_CHANNEL)
+
+@Client.on_message(filters.command("ping"))
+async def ping_pong(bot, message):
+   # start = time()
+    current_time = datetime.utcnow()
+    uptime_sec = (current_time - START_TIME).total_seconds()
+    uptime = await _human_time_duration(int(uptime_sec))
+    #m_reply = await message.reply_text("Pinging...")
+    #delta_ping = time() - start
+    #ping = (current_time - uptime_sec).microseconds / 1000
+   
+    await message.delete(True)
+    S = await message.reply_sticker(
+    sticker=random.choice(Stick))
+   
+    m_reply = await message.reply_text("ᴡᴀɪᴛ...")
+    delta_ping = time() - start
+    await asyncio.sleep(0.5)
+    M = await m_reply.edit_text(
+    #chat_id=message.chat.id
+    text=f"<b>🏓 ᴘɪɴɢ :</b> <code>{delta_ping * 100:.3f} ms</code>\n\n"
+         f"<b>⏰ ᴜᴘᴛɪᴍᴇ :</b> <code>{uptime}</code>")
+    
+    await asyncio.sleep(10)
+    await S.delete()
+    await M.delete()
 
 @Client.on_message(filters.command('set_template'))
 async def save_template(client, message):
