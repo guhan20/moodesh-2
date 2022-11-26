@@ -4,13 +4,14 @@ from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, Media
 from info import IMDB_TEMPLATE
 from utils import extract_user, get_file_id, get_poster, last_online
 import time
+from info import ADMINS
 from datetime import datetime
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 import logging
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
 
-@Client.on_message(filters.command('id'))
+@Client.on_message(filters.command('id') & filters.user(ADMINS))
 async def showid(client, message):
     chat_type = message.chat.type
     if chat_type == "private":
@@ -54,7 +55,7 @@ async def showid(client, message):
             quote=True
         )
 
-@Client.on_message(filters.command(["info"]))
+@Client.on_message(filters.command(["info"]) & filters.user(ADMINS))
 async def who_is(client, message):
     # https://github.com/SpEcHiDe/PyroGramBot/blob/master/pyrobot/plugins/admemes/whois.py#L19
     status_message = await message.reply_text(
@@ -127,7 +128,7 @@ async def who_is(client, message):
         )
     await status_message.delete()
 
-@Client.on_message(filters.command(["imdb", 'search']))
+@Client.on_message(filters.command(["imdb", 'search']) & filters.user(ADMINS))
 async def imdb_search(client, message):
     if ' ' in message.text:
         k = await message.reply('Searching ImDB')
