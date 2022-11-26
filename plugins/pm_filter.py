@@ -492,7 +492,6 @@ If you do not see the requested movie / series file, look at the next page
         date = present.strftime("%d-%B-%Y")
         day = present.strftime("%A")
         utc = present.strftime("%z")
-        start = time()
         current_time = datetime.utcnow()
         uptime_sec = (current_time - START_TIME).total_seconds()
         uptime = await _human_time_duration(int(uptime_sec))
