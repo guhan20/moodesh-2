@@ -289,7 +289,7 @@ Fɪʀsᴛ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ【 <a href="https://t.me/CinimaAdholokaam
         except Exception as e:
             logger.exception(e)
             f_caption=f_caption
-    f f_caption is None:
+    if f_caption is None:
         f_caption = f"<code>{files.file_name}</code>"
     buttons = [
         [
