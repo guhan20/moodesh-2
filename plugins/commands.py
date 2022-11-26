@@ -114,7 +114,7 @@ Sᴏʀʀʏ ɪ ᴏɴʟʏ ᴡᴏʀᴋ ᴏɴ <a href=https://t.me/cinimaadholokaam>
         btn = [
             [
                 InlineKeyboardButton("ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=invite_link.invite_link),
-                InlineKeyboardButton("ᴍᴇ ᴊᴏɪɴᴇᴅ", callback_data=callback_data=f"{pre}#{file_id}")
+                InlineKeyboardButton("ᴍᴇ ᴊᴏɪɴᴇᴅ", callback_data=f"{pre}#{file_id}")
             ]
         ]
 
