@@ -121,7 +121,7 @@ Sᴏʀʀʏ ɪ ᴏɴʟʏ ᴡᴏʀᴋ ᴏɴ <a href=https://t.me/cinimaadholokaam>
 
         if message.command[1] != "subscribe":
         kk, file_id = message.command[1].split("_", 1)
-        pre = 'checksubp' if kk == 'filep' else 'checksub
+        pre = 'checksubp' if kk == 'filep' else 'checksub'
         btn.append([InlineKeyboardButton("Hᴇʏ Bᴏᴛ....! Wʜʏ I'ᴍ ᴊᴏɪɴɪɴɢ", callback_data="whyjoin")])
         await message.delete(True)
         await client.send_message(
