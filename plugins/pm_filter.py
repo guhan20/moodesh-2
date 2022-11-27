@@ -772,20 +772,16 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
             search = message.text
             files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
             if not files:
-              #  if settings["spell_check"]:
-                    await msg.reply_photo(photo="https://telegra.ph/file/be1afacaeb53ece430689.jpg", caption="""<i>Google, yendex എന്ന് എഴുതിയിരിക്കുന്ന ഏതെങ്കിലും ബട്ടണിൽ ക്ലിക്ക് ചെയ്ത് ശരിയായ സിനിമയുടെ പേര് കണ്ടെത്തി ഇവിടെ നൽകുക എന്നാലേ സിനിമ / Tv . Web സീരിയസ് കിട്ടുകയുള്ളു..</i> 
-                   
-<i>എന്നിട്ടും കിട്ടുന്നില്ല എങ്കിൽ. </i><i>@admin</i> <i>ശേഷം മൂവി Name &amp; year. Example : </i><b><i>@admin</i></b> <b><i>kala 2020</i></b> ഈ <i>രീതിയിൽ  ഗ്രൂപ്പിൽ സെന്റ് ചെയുക</i>. 24 <i>മണിക്കൂറിനുള്ളിൽ അഡ്മിൻ അപ്‌ലോഡ് ചെയ്യും</i>
-<i>തിയേറ്ററിൽ റിലീസ് ആയ മൂവിയാണ് ചോദിച്ചതെങ്കിൽ കിട്ടില്ല ott Dvd റിലീസ് ആയാൽ മാത്രമേ കിട്ടുള്ളൂ</i>""")
-#                else:
-            #        return
-     #   else:
-      #      return
-  #  else:
-    message = msg
-    settings = await get_settings(msg.chat.id)
-    message = msg.reply_to_message  # msg will be callback query
-    search, files, offset, total_results = spoll
+                if settings["spell_check"]:
+                    return await advantage_spell_chok(msg)
+                else:
+                    return
+        else:
+            return
+    else:
+        settings = await get_settings(msg.message.chat.id)
+        message = msg.message.reply_to_message  # msg will be callback query
+        search, files, offset, total_results = spoll
     
     pre = 'filep' if settings['file_secure'] else 'file'
     pre = 'Chat' if settings['redirect_to'] == 'Chat' else pre
@@ -948,7 +944,7 @@ async def advantage_spell_chok(msg):
      #   await asyncio.sleep(8)
      #   await k.delete()
     #    return
-#    SPELL_CHECK[msg.message_id] = movielist
+    SPELL_CHECK[msg.message_id]
     btn = [InlineKeyboardButton("🔍ɢᴏᴏɢʟᴇ🔎", url=f'https://google.com/search?q={query}')]
     await msg.reply("𝖡𝗋𝗈, 𝖢𝗁𝖾𝖼𝗄 𝗍𝗁𝖾 𝗌𝗉𝖾𝗅𝗅𝗂𝗇𝗀 𝖸𝗈𝗎 𝗁𝖺𝗏𝖾 𝗌𝖾𝗇𝖽 𝗂𝗇 𝗀𝗈𝗈𝗀𝗅𝖾. 𝖨𝖿 𝖸𝗈𝗎 𝗁𝖺𝗏𝖾 𝗋𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖥𝗈𝗋 𝖢𝖺𝗆 𝗉𝗋𝗂𝗇𝗍 𝖸𝗈𝗎 𝗐𝗂𝗅𝗅 𝗇𝗈𝗍 𝖦𝖾𝗍 𝗂𝗍.",
                     reply_markup=InlineKeyboardMarkup(btn))
