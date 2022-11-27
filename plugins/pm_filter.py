@@ -566,10 +566,10 @@ If you do not see the requested movie / series file, look at the next page
            #     )
       #      )
             await query.answer(f'ʜᴇʏ {query.from_user.first_name} ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴅʏ 😴\n\n𝙥𝙡𝙚𝙖𝙨𝙚 𝙘𝙡𝙞𝙘𝙠 @ 𝙗𝙪𝙩𝙩𝙤𝙣 💡\n\n𝙊𝙪𝙧 S𝙘𝙧𝙤𝙡𝙡 𝘿𝙤𝙬𝙣 ⬇️', show_alert=True)
-          #  await asyncio.sleep(300) 
+            await asyncio.sleep(2) 
            # await msg1.delete()
-          #  await msg.delete()
-          #  del msg1, msg
+            await msg.delete()
+            del msg
         except Exception as e:
             logger.exception(e, exc_info=True)
             await query.answer(f"Encountering Issues", True)
