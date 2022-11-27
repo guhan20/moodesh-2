@@ -928,7 +928,7 @@ async def advantage_spell_chok(msg):
           #  if match:
           #      gs_parsed.append(match.group(1))
    # user = msg.from_user.id if msg.from_user else 0
-   # movielist = []
+    movielist = []
    # gs_parsed = list(dict.fromkeys(gs_parsed))  # removing duplicates https://stackoverflow.com/a/7961425
    # if len(gs_parsed) > 3:
      #   gs_parsed = gs_parsed[:3]
