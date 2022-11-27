@@ -945,7 +945,7 @@ async def advantage_spell_chok(msg):
      #   await k.delete()
     #    return
 #    SPELL_CHECK[msg.message_id] = movielist
-    buttons=[[InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={query.replace(" ","+")}'),InlineKeyboardButton("🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search/?text={query.replace(" ","+")}')]
+    buttons=[[InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={query.replace(" ","+")}'),InlineKeyboardButton("🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search/?text={query.replace(" ","+")}')]]
         ms = await msg.reply_photo(photo="https://telegra.ph/file/be1afacaeb53ece430689.jpg", caption="""<i>Google, yendex എന്ന് എഴുതിയിരിക്കുന്ന ഏതെങ്കിലും ബട്ടണിൽ ക്ലിക്ക് ചെയ്ത് ശരിയായ സിനിമയുടെ പേര് കണ്ടെത്തി ഇവിടെ നൽകുക എന്നാലേ സിനിമ / Tv . Web സീരിയസ് കിട്ടുകയുള്ളു..</i> 
                    
 <i>എന്നിട്ടും കിട്ടുന്നില്ല എങ്കിൽ. </i><i>@admin</i> <i>ശേഷം മൂവി Name &amp; year. Example : </i><b><i>@admin</i></b> <b><i>kala 2020</i></b> ഈ <i>രീതിയിൽ  ഗ്രൂപ്പിൽ സെന്റ് ചെയുക</i>. 24 <i>മണിക്കൂറിനുള്ളിൽ അഡ്മിൻ അപ്‌ലോഡ് ചെയ്യും</i>
