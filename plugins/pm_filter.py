@@ -776,11 +776,11 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
                     await msg.reply_photo(photo="https://telegra.ph/file/be1afacaeb53ece430689.jpg", caption="""<i>Google, yendex എന്ന് എഴുതിയിരിക്കുന്ന ഏതെങ്കിലും ബട്ടണിൽ ക്ലിക്ക് ചെയ്ത് ശരിയായ സിനിമയുടെ പേര് കണ്ടെത്തി ഇവിടെ നൽകുക എന്നാലേ സിനിമ / Tv . Web സീരിയസ് കിട്ടുകയുള്ളു..</i> 
                    
 <i>എന്നിട്ടും കിട്ടുന്നില്ല എങ്കിൽ. </i><i>@admin</i> <i>ശേഷം മൂവി Name &amp; year. Example : </i><b><i>@admin</i></b> <b><i>kala 2020</i></b> ഈ <i>രീതിയിൽ  ഗ്രൂപ്പിൽ സെന്റ് ചെയുക</i>. 24 <i>മണിക്കൂറിനുള്ളിൽ അഡ്മിൻ അപ്‌ലോഡ് ചെയ്യും</i>
-<i>തിയേറ്ററിൽ റിലീസ് ആയ മൂവിയാണ് ചോദിച്ചതെങ്കിൽ കിട്ടില്ല ott Dvd റിലീസ് ആയാൽ മാത്രമേ കിട്ടുള്ളൂ</i>"""
-                #else:
-                  #  return
-#        else:
-         #   return
+<i>തിയേറ്ററിൽ റിലീസ് ആയ മൂവിയാണ് ചോദിച്ചതെങ്കിൽ കിട്ടില്ല ott Dvd റിലീസ് ആയാൽ മാത്രമേ കിട്ടുള്ളൂ</i>""")
+                else:
+                    return
+        else:
+            return
     else:
         settings = await get_settings(msg.message.chat.id)
         message = msg.message.reply_to_message  # msg will be callback query
