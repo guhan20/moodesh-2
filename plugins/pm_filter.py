@@ -763,7 +763,7 @@ If you do not see the requested movie / series file, look at the next page
 
 async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     if not spoll:
-        message = msog
+        message = msg
         settings = await get_settings(message.chat.id)
         if message.text.startswith("/"): return  # ignore commands
         if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
@@ -772,8 +772,16 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
             search = message.text
             files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
             if not files:
-                if settings["spell_check"]:
-                    return await advantage_spell_chok(msog)
+                if SPELL_CHECK_REPLY:
+                    return await ms = await msg.reply_photo(photo="https://telegra.ph/file/be1afacaeb53ece430689.jpg", caption="""<i>Google, yendex എന്ന് എഴുതിയിരിക്കുന്ന ഏതെങ്കിലും ബട്ടണിൽ ക്ലിക്ക് ചെയ്ത് ശരിയായ സിനിമയുടെ പേര് കണ്ടെത്തി ഇവിടെ നൽകുക എന്നാലേ സിനിമ / Tv . Web സീരിയസ് കിട്ടുകയുള്ളു..</i> 
+                   
+<i>എന്നിട്ടും കിട്ടുന്നില്ല എങ്കിൽ. </i><i>@admin</i> <i>ശേഷം മൂവി Name &amp; year. Example : </i><b><i>@admin</i></b> <b><i>kala 2020</i></b> ഈ <i>രീതിയിൽ  ഗ്രൂപ്പിൽ സെന്റ് ചെയുക</i>. 24 <i>മണിക്കൂറിനുള്ളിൽ അഡ്മിൻ അപ്‌ലോഡ് ചെയ്യും</i>
+
+<i>തിയേറ്ററിൽ റിലീസ് ആയ മൂവിയാണ് ചോദിച്ചതെങ്കിൽ കിട്ടില്ല ott Dvd റിലീസ് ആയാൽ മാത്രമേ കിട്ടുള്ളൂ</i>""", reply_markup=InlineKeyboardMarkup(buttons))
+                   await asyncio.sleep(20)
+                   await msg.delete()
+                   await ms.delete()
+                    
                 else:
                     return
         else:
@@ -946,12 +954,12 @@ async def advantage_spell_chok(msog):
       #  await k.delete()
        # return
     #SPELL_CHECK[msg.message_id] = movielist
-    btn = [InlineKeyboardButton("🔍ɢᴏᴏɢʟᴇ🔎", url=f'https://google.com/search?q={query}')]
-    await msg.reply("𝖡𝗋𝗈, 𝖢𝗁𝖾𝖼𝗄 𝗍𝗁𝖾 𝗌𝗉𝖾𝗅𝗅𝗂𝗇𝗀 𝖸𝗈𝗎 𝗁𝖺𝗏𝖾 𝗌𝖾𝗇𝖽 𝗂𝗇 𝗀𝗈𝗈𝗀𝗅𝖾. 𝖨𝖿 𝖸𝗈𝗎 𝗁𝖺𝗏𝖾 𝗋𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖥𝗈𝗋 𝖢𝖺𝗆 𝗉𝗋𝗂𝗇𝗍 𝖸𝗈𝗎 𝗐𝗂𝗅𝗅 𝗇𝗈𝗍 𝖦𝖾𝗍 𝗂𝗍.",
-                    reply_markup=InlineKeyboardMarkup(btn))
-    await asyncio.sleep(20)
-    await msg.delete()
-    await ms.delete()
+    #btn = [InlineKeyboardButton("🔍ɢᴏᴏɢʟᴇ🔎", url=f'https://google.com/search?q={query}')]
+    #await msg.reply("𝖡𝗋𝗈, 𝖢𝗁𝖾𝖼𝗄 𝗍𝗁𝖾 𝗌𝗉𝖾𝗅𝗅𝗂𝗇𝗀 𝖸𝗈𝗎 𝗁𝖺𝗏𝖾 𝗌𝖾𝗇𝖽 𝗂𝗇 𝗀𝗈𝗈𝗀𝗅𝖾. 𝖨𝖿 𝖸𝗈𝗎 𝗁𝖺𝗏𝖾 𝗋𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖥𝗈𝗋 𝖢𝖺𝗆 𝗉𝗋𝗂𝗇𝗍 𝖸𝗈𝗎 𝗐𝗂𝗅𝗅 𝗇𝗈𝗍 𝖦𝖾𝗍 𝗂𝗍.",
+                  #  reply_markup=InlineKeyboardMarkup(btn))
+   # await asyncio.sleep(20)
+   # await msg.delete()
+  #  await ms.delete()
 
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
