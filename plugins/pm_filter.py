@@ -782,10 +782,9 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
      #   else:
       #      return
   #  else:
-    message = message
     message = msg
-    settings = await get_settings(msg.message.chat.id)
-    message = msg.message.reply_to_message  # msg will be callback query
+    settings = await get_settings(msg.chat.id)
+    message = msg.reply_to_message  # msg will be callback query
     search, files, offset, total_results = spoll
     
     pre = 'filep' if settings['file_secure'] else 'file'
