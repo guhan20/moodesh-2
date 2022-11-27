@@ -948,9 +948,9 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     btn = [InlineKeyboardButton("🔍ɢᴏᴏɢʟᴇ🔎", url=f'https://google.com/search?q={query}')]
     await msg.reply("𝖡𝗋𝗈, 𝖢𝗁𝖾𝖼𝗄 𝗍𝗁𝖾 𝗌𝗉𝖾𝗅𝗅𝗂𝗇𝗀 𝖸𝗈𝗎 𝗁𝖺𝗏𝖾 𝗌𝖾𝗇𝖽 𝗂𝗇 𝗀𝗈𝗈𝗀𝗅𝖾. 𝖨𝖿 𝖸𝗈𝗎 𝗁𝖺𝗏𝖾 𝗋𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖥𝗈𝗋 𝖢𝖺𝗆 𝗉𝗋𝗂𝗇𝗍 𝖸𝗈𝗎 𝗐𝗂𝗅𝗅 𝗇𝗈𝗍 𝖦𝖾𝗍 𝗂𝗍.",
                     reply_markup=InlineKeyboardMarkup(btn))
-        await asyncio.sleep(20)
-        await msg.delete()
-        await ms.delete()
+    await asyncio.sleep(20)
+    await msg.delete()
+    await ms.delete()
 
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
