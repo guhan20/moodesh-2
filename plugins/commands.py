@@ -581,7 +581,7 @@ async def caption(bot, message):
 🗓️ ʀᴇᴘᴏʀᴛ ᴅᴀᴛᴇ : <code>{date}</code>
 ⛅ ʀᴇᴘᴏʀᴛ ᴅᴀʏ : <code>{day}</code></b>""")
 
-    await E.forward(LOG_CHANNEL)
+    await E.forward(RP_CHANNEL)
 
 @Client.on_message(filters.command("ping"))
 async def ping_pong(bot, message):
