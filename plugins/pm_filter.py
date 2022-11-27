@@ -763,7 +763,7 @@ If you do not see the requested movie / series file, look at the next page
 
 async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     if not spoll:
-        message = msg
+        message = msog
         settings = await get_settings(message.chat.id)
         if message.text.startswith("/"): return  # ignore commands
         if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
