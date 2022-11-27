@@ -772,16 +772,8 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
             search = message.text
             files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
             if not files:
-                if SPELL_CHECK_REPLY:
-                    return await ms = await msg.reply_photo(photo="https://telegra.ph/file/be1afacaeb53ece430689.jpg", caption="""<i>Google, yendex എന്ന് എഴുതിയിരിക്കുന്ന ഏതെങ്കിലും ബട്ടണിൽ ക്ലിക്ക് ചെയ്ത് ശരിയായ സിനിമയുടെ പേര് കണ്ടെത്തി ഇവിടെ നൽകുക എന്നാലേ സിനിമ / Tv . Web സീരിയസ് കിട്ടുകയുള്ളു..</i> 
-                   
-<i>എന്നിട്ടും കിട്ടുന്നില്ല എങ്കിൽ. </i><i>@admin</i> <i>ശേഷം മൂവി Name &amp; year. Example : </i><b><i>@admin</i></b> <b><i>kala 2020</i></b> ഈ <i>രീതിയിൽ  ഗ്രൂപ്പിൽ സെന്റ് ചെയുക</i>. 24 <i>മണിക്കൂറിനുള്ളിൽ അഡ്മിൻ അപ്‌ലോഡ് ചെയ്യും</i>
-
-<i>തിയേറ്ററിൽ റിലീസ് ആയ മൂവിയാണ് ചോദിച്ചതെങ്കിൽ കിട്ടില്ല ott Dvd റിലീസ് ആയാൽ മാത്രമേ കിട്ടുള്ളൂ</i>""", reply_markup=InlineKeyboardMarkup(buttons))
-                   await asyncio.sleep(20)
-                   await msg.delete()
-                   await ms.delete()
-                    
+                if settings["spell_check"]:
+                    return await advantage_spell_chok(msg)
                 else:
                     return
         else:
@@ -910,8 +902,8 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
         await msg.message.delete()
 
 
-async def advantage_spell_chok(msog):
-    query = msg.text
+#async def advantage_spell_chok(msog):
+   # query = msg.text
    # btn = [InlineKeyboardButton("🔍ɢᴏᴏɢʟᴇ🔎", url=f'https://google.com/search?q={query}')]
       #  r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|br((o|u)h?)*|^h(e|a)?(l)*(o)*|mal(ayalam)?|t(h)?amil|file|that|find|und(o)*|kit(t(i|y)?)?o(w)?|thar(u)?(o)*w?|kittum(o)*|aya(k)*(um(o)*)?|full\smovie|any(one)|with\ssubtitle(s)?)",
      #   "", msg.text, flags=re.IGNORECASE)  # plis contribute some common words
