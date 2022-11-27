@@ -779,8 +779,8 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
 <i>തിയേറ്ററിൽ റിലീസ് ആയ മൂവിയാണ് ചോദിച്ചതെങ്കിൽ കിട്ടില്ല ott Dvd റിലീസ് ആയാൽ മാത്രമേ കിട്ടുള്ളൂ</i>""")
 #                else:
             #        return
-      #  else:
-      #      return
+        else:
+            return
     else:
         settings = await get_settings(msg.message.chat.id)
         message = msg.message.reply_to_message  # msg will be callback query
