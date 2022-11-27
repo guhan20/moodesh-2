@@ -782,6 +782,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
      #   else:
       #      return
   #  else:
+    message = message
     message = msg
     settings = await get_settings(msg.message.chat.id)
     message = msg.message.reply_to_message  # msg will be callback query
