@@ -904,23 +904,23 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
 
 async def advantage_spell_chok(msg):
     query = msg.text
-    btn = [InlineKeyboardButton("🔍ɢᴏᴏɢʟᴇ🔎", url=f'https://google.com/search?q={query}')]
+   # btn = [InlineKeyboardButton("🔍ɢᴏᴏɢʟᴇ🔎", url=f'https://google.com/search?q={query}')]
       #  r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|br((o|u)h?)*|^h(e|a)?(l)*(o)*|mal(ayalam)?|t(h)?amil|file|that|find|und(o)*|kit(t(i|y)?)?o(w)?|thar(u)?(o)*w?|kittum(o)*|aya(k)*(um(o)*)?|full\smovie|any(one)|with\ssubtitle(s)?)",
      #   "", msg.text, flags=re.IGNORECASE)  # plis contribute some common words
    # query = query.strip() + " movie"
-    g_s = await search_gagala(query)
-    g_s += await search_gagala(msg.text)
+    #g_s = await search_gagala(query)
+   # g_s += await search_gagala(msg.text)
    # gs_parsed = []
    # if not g_s:
        # k = await msg.reply("𝖨 𝖼𝖺𝗇𝗍 𝖿𝗂𝗇𝖽 𝗂𝗍 𝗂𝗇 𝗆𝗒 𝖣𝖺𝗍𝖺𝖡𝖺𝗌𝖾.")
       #  await asyncio.sleep(8)
        # await k.delete()
       #  return
-    regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
-    gs = list(filter(regex.match, g_s))
-    gs_parsed = [re.sub(
-        r'\b(\-([a-zA-Z-\s])\-\simdb|(\-\s)?imdb|(\-\s)?wikipedia|\(|\)|\-|reviews|full|all|episode(s)?|film|movie|series)',
-        '', i, flags=re.IGNORECASE) for i in gs]
+   # regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
+    #gs = list(filter(regex.match, g_s))
+   # gs_parsed = [re.sub(
+     #   r'\b(\-([a-zA-Z-\s])\-\simdb|(\-\s)?imdb|(\-\s)?wikipedia|\(|\)|\-|reviews|full|all|episode(s)?|film|movie|series)',
+      #  '', i, flags=re.IGNORECASE) for i in gs]
    # if not gs_parsed:
        # reg = re.compile(r"watch(\s[a-zA-Z0-9_\s\-\(\)]*)*\|.*",
            #              re.IGNORECASE)  # match something like Watch Niram | Amazon Prime
@@ -929,7 +929,7 @@ async def advantage_spell_chok(msg):
           #  if match:
           #      gs_parsed.append(match.group(1))
    # user = msg.from_user.id if msg.from_user else 0
-    movielist = []
+  #  movielist = []
    # gs_parsed = list(dict.fromkeys(gs_parsed))  # removing duplicates https://stackoverflow.com/a/7961425
    # if len(gs_parsed) > 3:
      #   gs_parsed = gs_parsed[:3]
@@ -938,15 +938,15 @@ async def advantage_spell_chok(msg):
           #  imdb_s = await get_poster(mov.strip(), bulk=True)  # searching each keyword in imdb
             #if imdb_s:
              #   movielist += [movie.get('title') for movie in imdb_s]
-    movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
-    movielist = list(dict.fromkeys(movielist))  # removing duplicates
-    if not movielist:
+  #  movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
+  #  movielist = list(dict.fromkeys(movielist))  # removing duplicates
+   # if not movielist:
        # k = await msg.reply("𝖡𝗋𝗈, 𝖢𝗁𝖾𝖼𝗄 𝗍𝗁𝖾 𝗌𝗉𝖾𝗅𝗅𝗂𝗇𝗀 𝖸𝗈𝗎 𝗁𝖺𝗏𝖾 𝗌𝖾𝗇𝖽 𝗂𝗇 𝗀𝗈𝗈𝗀𝗅𝖾. 𝖨𝖿 𝖸𝗈𝗎 𝗁𝖺𝗏𝖾 𝗋𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖥𝗈𝗋 𝖢𝖺𝗆 𝗉𝗋𝗂𝗇𝗍 𝖸𝗈𝗎 𝗐𝗂𝗅𝗅 𝗇𝗈𝗍 𝖦𝖾𝗍 𝗂𝗍.")
        # await asyncio.sleep(8)
       #  await k.delete()
        # return
     #SPELL_CHECK[msg.message_id] = movielist
-    #btn = [InlineKeyboardButton("🔍ɢᴏᴏɢʟᴇ🔎", url=f'https://google.com/search?q={query}')]
+    btn = [InlineKeyboardButton("🔍ɢᴏᴏɢʟᴇ🔎", url=f'https://google.com/search?q={query}')]
     await msg.reply("𝖡𝗋𝗈, 𝖢𝗁𝖾𝖼𝗄 𝗍𝗁𝖾 𝗌𝗉𝖾𝗅𝗅𝗂𝗇𝗀 𝖸𝗈𝗎 𝗁𝖺𝗏𝖾 𝗌𝖾𝗇𝖽 𝗂𝗇 𝗀𝗈𝗈𝗀𝗅𝖾. 𝖨𝖿 𝖸𝗈𝗎 𝗁𝖺𝗏𝖾 𝗋𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖥𝗈𝗋 𝖢𝖺𝗆 𝗉𝗋𝗂𝗇𝗍 𝖸𝗈𝗎 𝗐𝗂𝗅𝗅 𝗇𝗈𝗍 𝖦𝖾𝗍 𝗂𝗍.",
                     reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(20)
