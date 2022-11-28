@@ -484,7 +484,7 @@ If you do not see the requested movie / series file, look at the next page
         ident, file_id, rid = query.data.split("#")
 
         if int(rid) not in [query.from_user.id, 0]:
-            return await query.answer(f"മോനെ {query.from_user.first_name} ഇത്‌ നിനക്കുള്ളതല്ല 🤭\n\n {query.message.reply_to_message.from_user.first_name} ന്റെ റിക്യുസ്റ്റ് ആണ് ഇത് 🙂\n\nRequest your own 🥰\n\n© Cinimaadholokam", show_alert=True)
+            return await query.answer(f"അല്ലയോ {query.from_user.first_name} അങ്ങുന്നേ.. സ്വന്തമായി മൂവി REQUEST ചെയ്താലും 😞\n\n ʀᴇǫᴜᴇsᴛ  ʏᴏᴜʀ ᴏᴡɴ ғɪʟᴇ , ᴅᴏɴ'ᴛ ᴄʟɪᴄᴋ ᴏᴛʜᴇʀs ʀᴇǫᴜᴇsᴛᴇᴅ ғɪʟᴇs. 🤦‍♂️", show_alert=True)
 
         files_ = await get_file_details(file_id)
         if not files_:
@@ -539,7 +539,7 @@ If you do not see the requested movie / series file, look at the next page
             msg = await client.send_cached_media(
                 chat_id=AUTH_CHANNEL,
                 file_id=file_id,
-                caption=f'<b>🎟 ʀᴇǫᴜsᴛᴇᴅ ʙʏ : {query.from_user.first_name}</b> \n\n<code>{title}</code>\n\n<i>⚠️ ᴛʜɪs ғɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ғʀᴏᴍ ʜᴇʀᴇ ᴡɪᴛʜɪɴ 5 ᴍɪɴᴜᴛᴇ ᴀs ɪᴛ ʜᴀs ᴄᴏᴘʏʀɪɢʜᴛ....</i>\n\n <b>ᴅᴏ ɴᴏᴛ ᴅᴏᴡɴʟᴏᴀᴅ ᴛʜᴇ ғɪʟᴇ ғʀᴏᴍ ʜᴇʀᴇ. ᴅᴏᴡɴʟᴏᴀᴅ ɪᴛ ᴀғᴛᴇʀ ғᴏʀᴡᴀʀᴅɪɴɢ ɪᴛ sᴏᴍᴇᴡʜᴇʀᴇ. ᴏᴛʜᴇʀᴡɪsᴇ ᴄʟɪᴄᴋ ᴛʜᴇ "sᴇɴᴅ ᴘᴍ" ʙᴜᴛᴛᴏɴ.</b>',
+                caption=f'<b>🎟 ʀᴇǫᴜsᴛᴇᴅ ʙʏ : {query.from_user.first_name}</b> \n\n<code>{title}</code>\n\n<i>⚠️ ᴛʜɪs ғɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ғʀᴏᴍ ʜᴇʀᴇ ᴡɪᴛʜɪɴ 5 ᴍɪɴᴜᴛᴇ ᴀs ɪᴛ ʜᴀs ᴄᴏᴘʏʀɪɢʜᴛ....</i>\n\n <b>ᴅᴏ ɴᴏᴛ ᴅᴏᴡɴʟᴏᴀᴅ ᴛʜᴇ ғɪʟᴇ ғʀᴏᴍ ʜᴇʀᴇ. ᴅᴏᴡɴʟᴏᴀᴅ ɪᴛ <s>ᴀғᴛᴇʀ ғᴏʀᴡᴀʀᴅɪɴɢ ɪᴛ sᴏᴍᴇᴡʜᴇʀᴇ</s>. ᴏᴛʜᴇʀᴡɪsᴇ ᴄʟɪᴄᴋ ᴛʜᴇ "sᴇɴᴅ ᴘᴍ" ʙᴜᴛᴛᴏɴ.</b>',
                 protect_content=True if ident == "filep" else False,
                 reply_markup=InlineKeyboardMarkup(
                     [
