@@ -243,11 +243,9 @@ If you do not see the requested movie / series file, look at the next page
 🗽 ʙʏ  ◉‿◉  ɢ ⁷⁷ ɢᴢ""", show_alert=True)
 
     elif query.data == "seen": 
-        await query.answer("""⛔ ഇവിടെ നിന്ന് ഫയൽ ഡൗൺലോഡ് ചെയ്യരുത്.  
+        await query.answer("""⛔ ഇവിടെ നിന്ന് ഫയൽ ഡൗൺലോഡ് ചെയ്യരുത്. ⚠ ഡാറ്റ വെറുതെ പാഴാകും  
 
-➡️ എവിടെയെങ്കിലും ഫോർവേഡ് ചെയ്ത ശേഷം ഡൗൺലോഡ് ചെയ്യുക. 
-
-✅ അല്ലെങ്കിൽ SEND PM ബട്ടണിൽ ക്ലിക്ക് ചെയ്യുക""", show_alert=True)
+"Sent pm" എന്ന ബട്ടൺ ക്ലിക്ക് ചെയ്തു ബോട്ടിൽ പോയി start കൊടുത്താൽ ഫയൽ കിട്ടുന്നതായിരിക്കും """, show_alert=True)
         
     elif query.data == "delallconfirm":
         userid = query.from_user.id
@@ -539,7 +537,7 @@ If you do not see the requested movie / series file, look at the next page
             msg = await client.send_cached_media(
                 chat_id=AUTH_CHANNEL,
                 file_id=file_id,
-                caption=f'<b>🎟 ʀᴇǫᴜsᴛᴇᴅ ʙʏ : {query.from_user.first_name}</b> \n\n<code>{title}</code>\n\n<i>⚠️ ᴛʜɪs ғɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ғʀᴏᴍ ʜᴇʀᴇ ᴡɪᴛʜɪɴ 5 ᴍɪɴᴜᴛᴇ ᴀs ɪᴛ ʜᴀs ᴄᴏᴘʏʀɪɢʜᴛ....</i>\n\n <b>ᴅᴏ ɴᴏᴛ ᴅᴏᴡɴʟᴏᴀᴅ ᴛʜᴇ ғɪʟᴇ ғʀᴏᴍ ʜᴇʀᴇ. ᴅᴏᴡɴʟᴏᴀᴅ ɪᴛ <s>ᴀғᴛᴇʀ ғᴏʀᴡᴀʀᴅɪɴɢ ɪᴛ sᴏᴍᴇᴡʜᴇʀᴇ</s>. ᴏᴛʜᴇʀᴡɪsᴇ ᴄʟɪᴄᴋ ᴛʜᴇ "sᴇɴᴅ ᴘᴍ" ʙᴜᴛᴛᴏɴ.</b>',
+                caption=f'<b>🎟 ʀᴇǫᴜsᴛᴇᴅ ʙʏ : {query.from_user.first_name}</b> \n\n<code>{title}</code>\n\n<i>⚠️ ᴛʜɪs ғɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ғʀᴏᴍ ʜᴇʀᴇ ᴡɪᴛʜɪɴ 1 ᴍɪɴᴜᴛᴇ ᴀs ɪᴛ ʜᴀs ᴄᴏᴘʏʀɪɢʜᴛ....</i>\n\n <b>If you click the "Sent pm" button and go to the bot and start it, you will get the file</b>',
                 protect_content=True if ident == "filep" else False,
                 reply_markup=InlineKeyboardMarkup(
                     [
@@ -566,7 +564,7 @@ If you do not see the requested movie / series file, look at the next page
            #     )
       #      )
             await query.answer(f'ʜᴇʏ {query.from_user.first_name} ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴅʏ 😴\n\n𝙥𝙡𝙚𝙖𝙨𝙚 𝙘𝙡𝙞𝙘𝙠 @ 𝙗𝙪𝙩𝙩𝙤𝙣 💡\n\n𝙊𝙪𝙧 S𝙘𝙧𝙤𝙡𝙡 𝘿𝙤𝙬𝙣 ⬇️', show_alert=True)
-            await asyncio.sleep(300) 
+            await asyncio.sleep(60) 
            # await msg1.delete()
             await msg.delete()
             del msg
