@@ -435,8 +435,8 @@ If you do not see the requested movie / series file, look at the next page
     if query.data.startswith("file"):
         ident, file_id, rid = query.data.split("#")
 
-        if int(rid) not in [query.from_user.id, 0]:
-            return await query.answer(f"അല്ലയോ {query.from_user.first_name} അങ്ങുന്നേ.. സ്വന്തമായി മൂവി REQUEST ചെയ്താലും 😞\n\n ʀᴇǫᴜᴇsᴛ  ʏᴏᴜʀ ᴏᴡɴ ғɪʟᴇ , ᴅᴏɴ'ᴛ ᴄʟɪᴄᴋ ᴏᴛʜᴇʀs ʀᴇǫᴜᴇsᴛᴇᴅ ғɪʟᴇs. 🤦‍♂️", show_alert=True)
+      #  if int(rid) not in [query.from_user.id, 0]:
+         #   return await query.answer(f"അല്ലയോ {query.from_user.first_name} അങ്ങുന്നേ.. സ്വന്തമായി മൂവി REQUEST ചെയ്താലും 😞\n\n ʀᴇǫᴜᴇsᴛ  ʏᴏᴜʀ ᴏᴡɴ ғɪʟᴇ , ᴅᴏɴ'ᴛ ᴄʟɪᴄᴋ ᴏᴛʜᴇʀs ʀᴇǫᴜᴇsᴛᴇᴅ ғɪʟᴇs. 🤦‍♂️", show_alert=True)
 
         files_ = await get_file_details(file_id)
         if not files_:
