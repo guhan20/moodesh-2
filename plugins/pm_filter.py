@@ -444,6 +444,7 @@ If you do not see the requested movie / series file, look at the next page
         files = files_[0]
         title = files.file_name
         f_caption = files.caption
+        size = get_size(files.file_size)
         settings = await get_settings(query.message.chat.id)
         if CUSTOM_FILE_CAPTION:
             try:
