@@ -435,8 +435,8 @@ If you do not see the requested movie / series file, look at the next page
     if query.data.startswith("file"):
         ident, file_id, rid = query.data.split("#")
 
-      #  if int(rid) not in [query.from_user.id, 0]:
-         #   return await query.answer(f"അല്ലയോ {query.from_user.first_name} അങ്ങുന്നേ.. സ്വന്തമായി മൂവി REQUEST ചെയ്താലും 😞\n\n ʀᴇǫᴜᴇsᴛ  ʏᴏᴜʀ ᴏᴡɴ ғɪʟᴇ , ᴅᴏɴ'ᴛ ᴄʟɪᴄᴋ ᴏᴛʜᴇʀs ʀᴇǫᴜᴇsᴛᴇᴅ ғɪʟᴇs. 🤦‍♂️", show_alert=True)
+        if int(rid) not in [query.from_user.id, 0]:
+            return await query.answer(f"അല്ലയോ {query.from_user.first_name} അങ്ങുന്നേ.. സ്വന്തമായി മൂവി REQUEST ചെയ്താലും 😞\n\n ʀᴇǫᴜᴇsᴛ  ʏᴏᴜʀ ᴏᴡɴ ғɪʟᴇ , ᴅᴏɴ'ᴛ ᴄʟɪᴄᴋ ᴏᴛʜᴇʀs ʀᴇǫᴜᴇsᴛᴇᴅ ғɪʟᴇs. 🤦‍♂️", show_alert=True)
 
         files_ = await get_file_details(file_id)
         if not files_:
@@ -482,8 +482,8 @@ If you do not see the requested movie / series file, look at the next page
     elif query.data.startswith("Chat"):
         ident, file_id, rid = query.data.split("#")
 
-      #  if int(rid) not in [query.from_user.id, 0]:
-          #  return await query.answer(f"അല്ലയോ {query.from_user.first_name} അങ്ങുന്നേ.. സ്വന്തമായി മൂവി REQUEST ചെയ്താലും 😞\n\n ʀᴇǫᴜᴇsᴛ  ʏᴏᴜʀ ᴏᴡɴ ғɪʟᴇ , ᴅᴏɴ'ᴛ ᴄʟɪᴄᴋ ᴏᴛʜᴇʀs ʀᴇǫᴜᴇsᴛᴇᴅ ғɪʟᴇs. 🤦‍♂️", show_alert=True)
+        if int(rid) not in [query.from_user.id, 0]:
+            return await query.answer(f"അല്ലയോ {query.from_user.first_name} അങ്ങുന്നേ.. സ്വന്തമായി മൂവി REQUEST ചെയ്താലും 😞\n\n ʀᴇǫᴜᴇsᴛ  ʏᴏᴜʀ ᴏᴡɴ ғɪʟᴇ , ᴅᴏɴ'ᴛ ᴄʟɪᴄᴋ ᴏᴛʜᴇʀs ʀᴇǫᴜᴇsᴛᴇᴅ ғɪʟᴇs. 🤦‍♂️", show_alert=True)
 
         files_ = await get_file_details(file_id)
         if not files_:
@@ -538,7 +538,7 @@ If you do not see the requested movie / series file, look at the next page
             msg = await client.send_cached_media(
                 chat_id=AUTH_CHANNEL,
                 file_id=file_id,
-                caption=f'<b>🎟 ʀᴇǫᴜsᴛᴇᴅ ʙʏ : {query.from_user.first_name}</b> \n\n<code>{title}</code>\n\n<i>⚠️ ᴛʜɪs ғɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ғʀᴏᴍ ʜᴇʀᴇ ᴡɪᴛʜɪɴ 1 ᴍɪɴᴜᴛᴇ ᴀs ɪᴛ ʜᴀs ᴄᴏᴘʏʀɪɢʜᴛ....</i>\n\n <b>If you click the "Sent pm" button and go to the bot and start it, you will get the file</b>',
+                caption=f'<b>🎟 ʀᴇǫᴜsᴛᴇᴅ ʙʏ : {query.from_user.first_name}</b> \n\n<code>{title}</code>\n\n<i>⚠️ ᴛʜɪs ғɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ғʀᴏᴍ ʜᴇʀᴇ ᴡɪᴛʜɪɴ 1 ᴍɪɴᴜᴛᴇ ᴀs ɪᴛ ʜᴀs ᴄᴏᴘʏʀɪɢʜᴛ....</i>\n\n <b> വേറെ എവിടെയെങ്കിലും ഫോർവെർഡ് ചെയ്തിട്ട് ഡൌൺലോഡ് ചെയുക 👍</b>',
                 protect_content=True if ident == "filep" else False,
                 reply_markup=InlineKeyboardMarkup(
                     [
@@ -562,8 +562,8 @@ If you do not see the requested movie / series file, look at the next page
                 'html',
                 reply_markup=InlineKeyboardMarkup(butt))
                 
-           #     )
-      #      )
+                )
+            )
             await query.answer(f'ʜᴇʏ {query.from_user.first_name} ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴅʏ 😴\n\n𝙥𝙡𝙚𝙖𝙨𝙚 𝙘𝙡𝙞𝙘𝙠 @ 𝙗𝙪𝙩𝙩𝙤𝙣 💡\n\n𝙊𝙪𝙧 S𝙘𝙧𝙤𝙡𝙡 𝘿𝙤𝙬𝙣 ⬇️', show_alert=True)
             await asyncio.sleep(60) 
            # await msg1.delete()
