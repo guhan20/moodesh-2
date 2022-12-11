@@ -538,7 +538,7 @@ If you do not see the requested movie / series file, look at the next page
             msg = await client.send_cached_media(
                 chat_id=AUTH_CHANNEL,
                 file_id=file_id,
-                caption=f'<b>🎟 ʀᴇǫᴜsᴛᴇᴅ ʙʏ : {query.from_user.first_name}</b> \n\n<code>{title}</code>\n\n<i>⚠️ ᴛʜɪs ғɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ғʀᴏᴍ ʜᴇʀᴇ ᴡɪᴛʜɪɴ 1 ᴍɪɴᴜᴛᴇ ᴀs ɪᴛ ʜᴀs ᴄᴏᴘʏʀɪɢʜᴛ....</i>\n\n <b> വേറെ എവിടെയെങ്കിലും ഫോർവെർഡ് ചെയ്തിട്ട് ഡൌൺലോഡ് ചെയുക 👍</b>',
+                caption=f'<b>🎟 ʀᴇǫᴜsᴛᴇᴅ ʙʏ : {query.from_user.first_name}</b> \n\n<code>{title}</code>\n\n<i>⚠️ ᴛʜɪs ғɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ғʀᴏᴍ ʜᴇʀᴇ ᴡɪᴛʜɪɴ 1 ||Day|| ᴀs ɪᴛ ʜᴀs ᴄᴏᴘʏʀɪɢʜᴛ....</i>\n\n <b> വേറെ എവിടെയെങ്കിലും ഫോർവെർഡ് ചെയ്തിട്ട് ഡൌൺലോഡ് ചെയുക 👍</b>',
                 protect_content=True if ident == "filep" else False,
                 reply_markup=InlineKeyboardMarkup(
                     [
@@ -565,10 +565,10 @@ If you do not see the requested movie / series file, look at the next page
               #  )
            # )
             await query.answer(f'ʜᴇʏ {query.from_user.first_name} ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴅʏ 😴\n\n𝙥𝙡𝙚𝙖𝙨𝙚 𝙘𝙡𝙞𝙘𝙠 @ 𝙗𝙪𝙩𝙩𝙤𝙣 💡\n\n𝙊𝙪𝙧 S𝙘𝙧𝙤𝙡𝙡 𝘿𝙤𝙬𝙣 ⬇️', show_alert=True)
-            await asyncio.sleep(60) 
+           # await asyncio.sleep(60) 
            # await msg1.delete()
-            await msg.delete()
-            del msg
+          #  await msg.delete()
+          #  del msg
         except Exception as e:
             logger.exception(e, exc_info=True)
             await query.answer(f"Encountering Issues", True)
