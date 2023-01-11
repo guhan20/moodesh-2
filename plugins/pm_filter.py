@@ -842,10 +842,18 @@ reply_markup=InlineKeyboardMarkup(buttons))
         btn.append(
             [InlineKeyboardButton(text="ᴍᴏʀᴇ ᴘᴀɢᴇꜱ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ",callback_data="pages")]
         )
+    present = datetime.now(tz=pytz.timezone("Asia/Kolkata"))
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
     if imdb:
+        KO = imdb['genres']
+        GT = KO.replace("Drama,", "🎭#Darma").replace("Western,", "🤠#Western").replace("War,", "🪖#War").replace("Talk-Show,", "🎙️#Talk_Show").replace("Sport,", "🎯#Sport").replace("Short,", "🍃#Short").replace("Sci-Fi,", "🔭#Sci_Fi").replace("Action,", "🥊#Action").replace("Romance,", "🌹#Romance").replace("Reality-TV,", "#📺Reality_TV").replace("News,", "🗞️#News").replace("Documentary,", "🧭#Documentary").replace("Game-Show,", "🎮#Game_Show").replace("Film-Noir,", "🎐#Film_Noir").replace("Crime,", "🔪#Crime").replace("Mystery,", "🕵️#Mystery").replace("Music,", "🎸#Music").replace("Musical,", "🎹#Musical").replace("Horror,", "🦹‍♂️#Horror").replace("History,", "📖#History").replace("Action,", "🥊#Action").replace("Thriller,", "💥#Thriller").replace("Adventure,", "🏔#Adventure").replace("Animation,", "🐟#Animation").replace("Fantasy,", "🤹#Fantasy").replace("Family,", "👨‍👩‍👦#Family").replace("Biography,", "🍿#Biography").replace("Comedy,", "😂#Comedy")
         cap = TEMPLATE.format(
+            time = present.strftime("%I:%M:%S %p"),
+            date = present.strftime("%d-%B-%Y"),
+            day = present.strftime("%A"),
+            utc = present.strftime("%z"),
+            unixtime = int(datetime.utcnow().timestamp()),
             query=search,
             mention_bot=temp.MENTION,
             mention_user=message.from_user.mention if message.from_user else message.sender_chat.title,
