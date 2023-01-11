@@ -769,7 +769,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
             return
         if 2 < len(message.text) < 100:
             search = message.text
-            buttons=[[InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={search.replace(" ","+")}'),InlineKeyboardButton("🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search/?text={search.replace(" ","+")}')],[InlineKeyboardButton("🇺🇸 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪsʜ 🇺🇸", callback_data="eng")]]
+            buttons=[[InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={search.replace(" ","+")}'),InlineKeyboardButton("🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search/?text={search.replace(" ","+")}')]]
             files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
             if not files:
                 if settings["spell_check"]:
