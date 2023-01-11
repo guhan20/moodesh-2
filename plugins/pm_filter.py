@@ -879,7 +879,7 @@ reply_markup=InlineKeyboardMarkup(buttons))
             distributors=imdb["distributors"],
             release_date=imdb['release_date'],
             year=imdb['year'],
-            genres=imdb['genres'],
+            genres=imdb = GT,
             poster=imdb['poster'],
             plot=imdb['plot'],
             rating=imdb['rating'],
