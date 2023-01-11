@@ -72,7 +72,7 @@ Release info : <a href={url}/releaseinfo>{release_date}</a></b>
  #/////////////////////////////////////////////////////////////////////////////////////////////////////  
     
     
-IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE_2", """<b>🪁 Tɪᴛɪʟᴇ : <a href={url}>{title}</a></b> 
+IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", """<b>🪁 Tɪᴛɪʟᴇ : <a href={url}>{title}</a></b> 
 
 <b>📋 ɪɴғᴏ : <code>{release_date}</code></b>
 
