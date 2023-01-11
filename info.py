@@ -54,7 +54,25 @@ IMDB = is_enabled((environ.get('IMDB', "True")), True)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "False")), False)
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", None)
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
-IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", environ.get("IMDB_TEMPLATE_1", """<b>🪁 Tɪᴛɪʟᴇ : <a href={url}>{title}</a></b>
+
+#///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+IMDB_TEMPLATE_2 = environ.get("IMDB_TEMPLATE_2)", """<b>📜  Title: <code>{title}</code>
+⚜️ Also Known As: {aka}
+🌟 Rating : {rating} / 10</b>
+<code>({rating} based on {votes} user ratings)</code>
+<b>⏱ | {runtime} Min |
+Release info : <a href={url}/releaseinfo>{release_date}</a></b>
+<b>♻️ Genre : {genres}
+🔊 Language : {languages}
+🌎 Country of Origin : {countries}</b>
+➤ Story Line: <code>{plot}</code>
+<i>★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ  <a href="https://t.me/Cinimaadholokam">ᴄɪɴɪᴍᴀᴀᴅʜᴏʟᴏᴋᴀᴍ</a></i></b>""")
+
+ #/////////////////////////////////////////////////////////////////////////////////////////////////////  
+    
+    
+IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE_1", """<b>🪁 Tɪᴛɪʟᴇ : <a href={url}>{title}</a></b> 
 
 <b>📋 ɪɴғᴏ : <code>{release_date}</code></b>
 
@@ -63,9 +81,14 @@ IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", environ.get("IMDB_TEMPLATE_1", """<
 
 <b>🎭 Gᴇɴʀᴇ : {genres}</b>
 🎙 Lᴀɴɢᴜᴀɢᴇ : <code>{languages}</code>
+
 🏜 Cᴏᴜɴᴛʀʏ : <code>{countries}</code></b>
 
 <i>⛅ Have a Nice <b>{day}</b> By <b><a href="https://t.me/Cinimaadholokaam">CALINKZ</a></b></i>""")
+
+
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                            
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
 MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
