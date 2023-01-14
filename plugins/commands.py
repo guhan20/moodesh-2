@@ -650,3 +650,25 @@ async def save_template(client, message):
     template = message.text.split(" ", 1)[1]
     await save_group_settings(grp_id, 'template', template)
     await sts.edit(f"Successfully changed template for {title} to\n\n{template}")
+    
+@Client.on_message(filters.command("usend") & filters.user(ADMINS))
+async def send_msg(bot, message):
+    if message.reply_to_message:
+        target_id = message.text
+        command = ["/usend"]
+        for cmd in command:
+            if cmd in target_id:
+                target_id = target_id.replace(cmd, "")
+        success = False
+        try:
+            user = await bot.get_users(int(target_id))
+            await message.reply_to_message.copy(int(user.id))
+            success = True
+        except Exception as e:
+            await message.reply_text(f"<b>Eʀʀᴏʀ :- <code>{e}</code></b>")
+        if success:
+            await message.reply_text(f"<b>Yᴏᴜʀ Mᴇssᴀɢᴇ Hᴀs Bᴇᴇɴ Sᴜᴄᴇssғᴜʟʟʏ Sᴇɴᴅ To {user.mention}.</b>")
+        else:
+            await message.reply_text("<b>Aɴ Eʀʀᴏʀ Oᴄᴄᴜʀʀᴇᴅ !</b>")
+    else:
+        await message.reply_text("<b>Cᴏᴍᴍᴀɴᴅ Iɴᴄᴏᴍᴘʟᴇᴛᴇ...</b>")
