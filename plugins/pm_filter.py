@@ -533,6 +533,7 @@ If you do not see the requested movie / series file, look at the next page
             f_caption = f"{files.file_name}"
             size = f"{files.file_size}"
             mention = f"{query.from_user.mention}"
+            b_1 = [[InlineKeyboardButton('ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ ', url="https://t.me/calinkzz")]]
   
         try:
             msg = await client.send_cached_media(
@@ -540,18 +541,8 @@ If you do not see the requested movie / series file, look at the next page
                 file_id=file_id,
                 caption=f'<b>🎟 ʀᴇǫᴜsᴛᴇᴅ ʙʏ : {query.from_user.first_name}</b> \n\n<code>{title}</code>\n\n<i>⚠️ ᴛʜɪs ғɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ғʀᴏᴍ ʜᴇʀᴇ ᴡɪᴛʜɪɴ 1 ||Day|| ᴀs ɪᴛ ʜᴀs ᴄᴏᴘʏʀɪɢʜᴛ....</i>\n\n <b> വേറെ എവിടെയെങ്കിലും ഫോർവെർഡ് ചെയ്തിട്ട് ഡൌൺലോഡ് ചെയുക 👍</b>',
                 protect_content=True if ident == "filep" else False,
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(f'🇮🇳 ᴍᴀʟ', callback_data="seen"),
-                            InlineKeyboardButton('Sᴇɴᴅ ᴘᴍ', callback_data=f'{pre}#{files.file_id}#{query.from_user.id}')
-                        ],                       
-                        [
-                            InlineKeyboardButton('ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ ', url="https://t.me/calinkzz")
-                        ]
-                    ]
-                )
-            )
+                reply_markup=InlineKeyboardMarkup(b_1))
+                    
             butt = [[InlineKeyboardButton('📥 ᴍᴏᴠɪᴇ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ 📥 ', url = msg.link)]]
             msg1 = await query.message.reply(
                 f'<b> ʜᴇʟʟᴏ {query.from_user.mention} {get}  </b> \n\n<b><i>✅ ʏᴏᴜʀ ғɪʟᴇ sᴜᴄᴄᴇssғᴜʟʟʏ ᴜᴘʟᴏᴀᴅᴇᴅ ᴛᴏ ᴄʜᴀɴɴᴇʟ ᴘʟᴇᴀsᴇ ᴄʟɪᴄᴋ ᴅᴏᴡɴʟᴏᴀᴅ ʙᴜᴛᴛᴏɴ,</i></b>\n\n'           
