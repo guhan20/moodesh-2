@@ -536,6 +536,7 @@ If you do not see the requested movie / series file, look at the next page
             b_1 = [[InlineKeyboardButton('ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ ', url="https://t.me/calinkzz")]]
   
         try:
+            b_1 = [[InlineKeyboardButton('ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ ', url="https://t.me/calinkzz")]]
             msg = await client.send_cached_media(
                 chat_id=AUTH_CHANNEL,
                 file_id=file_id,
