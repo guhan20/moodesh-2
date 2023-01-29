@@ -585,9 +585,11 @@ async def caption(bot, message):
 @Client.on_message(filters.command("ping"))
 async def ping_pong(bot, message):
    # start = time()
-    current_time = datetime.utcnow()
-    uptime_sec = (current_time - START_TIME).total_seconds()
-    uptime = await _human_time_duration(int(uptime_sec))
+    first = datetime.now()
+    second = datetime.now()
+    #current_time = datetime.utcnow()
+    #uptime_sec = (current_time - START_TIME).total_seconds()
+    #uptime = await _human_time_duration(int(uptime_sec))
     #m_reply = await message.reply_text("Pinging...")
     #delta_ping = time() - start
     #ping = (current_time - uptime_sec).microseconds / 1000
@@ -597,11 +599,11 @@ async def ping_pong(bot, message):
     sticker=random.choice(Stick))
    
     m_reply = await message.reply_text("ᴡᴀɪᴛ...")
-    delta_ping = time() - start
+    #delta_ping = time() - start
     await asyncio.sleep(0.5)
     M = await m_reply.edit_text(
     #chat_id=message.chat.id
-    text=f"<b>🏓 ᴘɪɴɢ :</b> <code>{delta_ping * 100:.3f} ms</code>\n\n"
+    text=f"<b>🏓 ᴘɪɴɢ :</b> <code>{(second - first).microseconds / 1000}</code>\n\n"
          f"<b>⏰ ᴜᴘᴛɪᴍᴇ :</b> <code>{uptime}</code>")
     
     await asyncio.sleep(10)
