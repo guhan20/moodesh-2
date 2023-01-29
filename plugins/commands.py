@@ -603,7 +603,7 @@ async def ping_pong(bot, message):
     await asyncio.sleep(0.5)
     M = await m_reply.edit_text(
     #chat_id=message.chat.id
-    text=f"<b>🏓 ᴘɪɴɢ :</b> <code>{(second - first).microseconds / 1000}</code>\n\n"
+    text=f"<b>🏓 ᴘɪɴɢ :</b> <code>{(second - first).microseconds / 100}</code>\n\n"
          f"<b>⏰ ᴜᴘᴛɪᴍᴇ :</b> <code>{uptime}</code>")
     
     await asyncio.sleep(10)
