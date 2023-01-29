@@ -587,9 +587,9 @@ async def ping_pong(bot, message):
    # start = time()
     first = datetime.now()
     second = datetime.now()
-    #current_time = datetime.utcnow()
-    #uptime_sec = (current_time - START_TIME).total_seconds()
-    #uptime = await _human_time_duration(int(uptime_sec))
+    current_time = datetime.utcnow()
+    uptime_sec = (current_time - START_TIME).total_seconds()
+    uptime = await _human_time_duration(int(uptime_sec))
     #m_reply = await message.reply_text("Pinging...")
     #delta_ping = time() - start
     #ping = (current_time - uptime_sec).microseconds / 1000
