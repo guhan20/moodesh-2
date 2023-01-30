@@ -2,6 +2,7 @@ import imp
 import os
 from datetime import datetime,  timedelta
 from time import time
+import time as t
 import pytz
 import logging
 import pyrogram
@@ -583,9 +584,9 @@ async def caption(bot, message):
     
 @Client.on_message(filters.command("pong"))
 async def ping(bot, message):
-    start_time = time.time()
+    start_time = t.time()
     bot.send_message(chat_id=message.message.chat_id, text="Pong!")
-    end_time = time.time()
+    end_time = t.time()
     response_time = (end_time - start_time) * 1000
     bot.send_message(chat_id=message.message.chat_id, text=f"Response time: {response_time:.0f} ms")    
     
