@@ -580,7 +580,15 @@ async def caption(bot, message):
 ⛅ ʀᴇᴘᴏʀᴛ ᴅᴀʏ : <code>{day}</code></b>""")
 
     await E.forward(RP_CHANNEL)
-
+    
+@Client.on_message(filters.command("pong"))
+async def ping(bot, message):
+    start_time = time.time()
+    bot.send_message(chat_id=message.message.chat_id, text="Pong!")
+    end_time = time.time()
+    response_time = (end_time - start_time) * 1000
+    bot.send_message(chat_id=message.message.chat_id, text=f"Response time: {response_time:.0f} ms")    
+    
 @Client.on_message(filters.command("ping"))
 async def ping_pong(bot, message):
    # start = time()
